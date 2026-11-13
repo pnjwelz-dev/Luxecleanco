@@ -252,25 +252,13 @@ footer{padding:18px;text-align:center;font-size:14px;color:#8a7a70}
 <div><label>Date</label><input id="invDate" type="date"></div>
 <div><label>Amount paid ($) </label><input id="invAmount" type="number" min="0" step="0.01" placeholder="0.00"></div>
 </div>
-<label>Who did the job?</label>
-<select id="invType" onchange="invTypeChanged()">
-<option value="solo">Just one of us (solo job)</option>
-<option value="joint">Both of us together (joint job)</option>
-</select>
-<div id="invSoloWrap">
-<label>Who did the solo job?</label>
-<select id="invPartner">
-<option>Peg</option>
-<option>Deb</option>
-</select>
-</div>
 <div id="invPreview" style="margin-top:12px"></div>
 <button class="btn" onclick="saveInvoice()">Save invoice</button>
 </div>
 <div class="card">
 <h3>Saved invoices</h3>
 <div id="invoiceList"></div>
-<p class="small">Luxe money rule: 15% of every paid bill goes to the Business Reserve. Solo jobs: the partner who did the job keeps the rest. Joint jobs: the rest splits 50/50. Each partner&rsquo;s share minus a 25% tax holdback is their Owner&rsquo;s Draw.</p>
+<p class="small">Luxe money rule: 15% of every paid bill goes to the Business Reserve. The rest is yours, minus a 25% tax holdback &mdash; that&rsquo;s your Owner&rsquo;s Draw.</p>
 </div>
 <div class="card">
 <h3>Back up my data</h3>
@@ -304,7 +292,7 @@ footer{padding:18px;text-align:center;font-size:14px;color:#8a7a70}
 
 </main>
 <footer>
-Peg Wells (217) 685-4520 &bull; Deb Sharp (217) 408-8892<br>
+Peg Wells (217) 685-4520<br>
 luxesignatureandco@gmail.com &bull; luxesignatureandco.com
 </footer>
 </div>
@@ -533,21 +521,12 @@ delete state.checks[checkKey()];
 save(); renderChecklist();
 }
 
-function invTypeChanged(){
-document.getElementById("invSoloWrap").style.display = document.getElementById("invType").value==="solo" ? "block" : "none";
-previewInvoice();
-}
 function calcInvoice(){
 var amount = parseFloat(document.getElementById("invAmount").value) || 0;
-var type = document.getElementById("invType").value;
-var partner = document.getElementById("invPartner").value;
 var reserve = amount * 0.15;
 var rest = amount - reserve;
-var peg = 0, deb = 0;
-if(type==="solo"){ if(partner==="Peg") peg = rest; else deb = rest; }
-else { peg = rest/2; deb = rest/2; }
-var pegHold = peg * 0.25, debHold = deb * 0.25;
-return {amount:amount, type:type, partner:partner, reserve:reserve, rest:rest, peg:peg, deb:deb, pegDraw:peg-pegHold, debDraw:deb-debHold, pegHold:pegHold, debHold:debHold};
+var hold = rest * 0.25;
+return {amount:amount, reserve:reserve, rest:rest, share:rest, hold:hold, draw:rest-hold};
 }
 function previewInvoice(){
 var c = calcInvoice();
@@ -555,21 +534,17 @@ var el = document.getElementById("invPreview");
 if(!c.amount){ el.innerHTML = "<p class='small'>Enter an amount to see the split.</p>"; return; }
 el.innerHTML = "<div class='money'><span>Amount paid</span><span>" + money(c.amount) + "</span></div>"
 + "<div class='money'><span>Business Reserve (15%)</span><span>" + money(c.reserve) + "</span></div>"
-+ "<div class='money'><span>Left to split</span><span>" + money(c.rest) + "</span></div>"
-+ "<div class='money'><span>Peg&rsquo;s share</span><span>" + money(c.peg) + "</span></div>"
-+ "<div class='money'><span>Deb&rsquo;s share</span><span>" + money(c.deb) + "</span></div>"
-+ "<div class='money'><span>Peg&rsquo;s tax holdback (25%)</span><span>" + money(c.pegHold) + "</span></div>"
-+ "<div class='money'><span>Deb&rsquo;s tax holdback (25%)</span><span>" + money(c.debHold) + "</span></div>"
-+ "<div class='money total'><span>Peg&rsquo;s draw</span><span>" + money(c.pegDraw) + "</span></div>"
-+ "<div class='money total'><span>Deb&rsquo;s draw</span><span>" + money(c.debDraw) + "</span></div>";
++ "<div class='money'><span>Your share</span><span>" + money(c.share) + "</span></div>"
++ "<div class='money'><span>Tax holdback (25%)</span><span>" + money(c.hold) + "</span></div>"
++ "<div class='money total'><span>Your draw</span><span>" + money(c.draw) + "</span></div>";
 }
 function saveInvoice(){
 var client = document.getElementById("invClient").value.trim();
 var date = document.getElementById("invDate").value;
 var c = calcInvoice();
 if(!client || !date || !c.amount){ alert("Add a client, a date, and an amount."); return; }
-state.invoices.push({id:uid(), client:client, date:date, amount:c.amount, type:c.type, partner:c.partner,
-reserve:c.reserve, rest:c.rest, peg:c.peg, deb:c.deb, pegDraw:c.pegDraw, debDraw:c.debDraw});
+state.invoices.push({id:uid(), client:client, date:date, amount:c.amount,
+reserve:c.reserve, rest:c.rest, share:c.share, hold:c.hold, draw:c.draw});
 save();
 document.getElementById("invClient").value="";
 document.getElementById("invAmount").value="";
@@ -581,8 +556,8 @@ if(!state.invoices.length) html = "<p class='small'>No invoices saved yet.</p>";
 state.invoices.slice().reverse().forEach(function(v){
 html += "<div class='item'><div class='body'>"
 + "<div class='title'>" + esc(v.client) + " — " + money(v.amount) + "</div>"
-+ "<div class='meta'>" + fmtDate(v.date) + " &bull; " + (v.type==="solo" ? "Solo (" + esc(v.partner) + ")" : "Joint") + "</div>"
-+ "<div class='meta'>Reserve " + money(v.reserve) + " &bull; Peg&rsquo;s draw " + money(v.pegDraw) + " &bull; Deb&rsquo;s draw " + money(v.debDraw) + "</div>"
++ "<div class='meta'>" + fmtDate(v.date) + "</div>"
++ "<div class='meta'>Reserve " + money(v.reserve) + " &bull; Your draw " + money(v.draw != null ? v.draw : v.pegDraw) + "</div>"
 + "</div><button class='btn btn-small btn-ghost' onclick=\"delInvoice('" + v.id + "')\">Delete</button></div>";
 });
 document.getElementById("invoiceList").innerHTML = html;
@@ -627,7 +602,6 @@ document.getElementById("guideBody").innerHTML = html;
 }
 
 document.getElementById("invAmount").addEventListener("input", previewInvoice);
-document.getElementById("invPartner").addEventListener("change", previewInvoice);
 renderAppts();
 renderClients();
 renderTodos();
@@ -638,7 +612,6 @@ renderInvoices();
 renderSuppliers();
 renderGuide();
 previewInvoice();
-invTypeChanged();
 </script>
 </body>
 </html>
