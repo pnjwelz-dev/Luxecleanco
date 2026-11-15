@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Terri's Luxe Office">
+<title>Terri's Luxe Office — Luxe Signature &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0d0d;color:#F7F2EA;font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;line-height:1.45}
+.app{max-width:640px;margin:0 auto;padding:0 0 96px}
+header{text-align:center;padding:20px 16px 10px;border-bottom:1px solid rgba(201,140,122,.4)}
+.wordmark{font-family:"Great Vibes",cursive;font-size:46px;line-height:1;color:#C98C7A;margin:0}
+.sub{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#E6CFCB;margin:6px 0 0}
+.verse{font-style:italic;font-size:14px;color:#b8a89e;margin:8px 0 0}
+.hint{font-size:14px;color:#cbb9ae;text-align:center;padding:8px 16px 0}
+main{padding:6px 12px 0}
+.tab{display:none}
+.tab.active{display:block}
+h2{font-family:"Great Vibes",cursive;font-size:32px;color:#C98C7A;margin:14px 4px 4px;font-weight:400}
+.card{background:#1a1a1a;border:1px solid #333;border-radius:14px;padding:14px;margin:12px 0}
+.card h3{margin:0 0 8px;font-size:20px;color:#E6CFCB}
+label{display:block;font-size:15px;color:#cbb9ae;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #444;background:#262626;color:#F7F2EA;font-family:inherit;font-size:17px}
+textarea{min-height:70px;resize:vertical}
+input[type=checkbox]{width:22px;height:22px;accent-color:#C98C7A;flex:none}
+input[type=date],input[type=time]{color-scheme:dark}
+.btn{display:inline-block;background:#C98C7A;color:#141414;border:none;padding:12px 20px;border-radius:999px;font-family:inherit;font-weight:700;font-size:17px;cursor:pointer;margin-top:10px}
+.btn-ghost{background:transparent;border:1px solid #C98C7A;color:#C98C7A}
+.btn-small{padding:8px 14px;font-size:15px;margin-top:0}
+.row{display:flex;gap:10px;align-items:flex-start}
+.row>*{flex:1}
+.item{display:flex;gap:10px;align-items:flex-start;padding:12px 4px;border-bottom:1px solid #2c2c2c}
+.item:last-child{border-bottom:none}
+.item .body{flex:1;min-width:0}
+.item .title{font-weight:700;font-size:18px}
+.item .meta{font-size:15px;color:#cbb9ae}
+.item .meta b{color:#F7F2EA}
+.done .title,.done .meta{text-decoration:line-through;opacity:.55}
+.pill{display:inline-block;font-size:13px;letter-spacing:1px;text-transform:uppercase;border:1px solid #C98C7A;color:#C98C7A;border-radius:999px;padding:2px 10px;margin-left:6px}
+.pill.green{border-color:#8fbf7f;color:#8fbf7f}
+.check{display:flex;gap:12px;align-items:center;padding:11px 2px;border-bottom:1px solid #2c2c2c;cursor:pointer}
+.check span{flex:1}
+.check input:checked+span{text-decoration:line-through;opacity:.55}
+.room{font-size:19px;font-weight:700;color:#E6CFCB;margin:16px 0 2px}
+.money{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #2c2c2c}
+.money.total{font-weight:700;font-size:20px;color:#C98C7A;border-bottom:none}
+.tabbar{position:fixed;left:0;right:0;bottom:0;background:#141414;border-top:1px solid #333;display:flex;z-index:10}
+.tabbar button{flex:1;background:none;border:none;color:#999;font-family:inherit;font-size:14px;font-weight:700;padding:13px 2px 16px;cursor:pointer}
+.tabbar button.active{color:#C98C7A}
+.tabbar button .ico{display:block;font-size:20px;line-height:1.1}
+.small{font-size:14px;color:#b8a89e}
+.doclink{display:block;padding:13px 14px;margin:9px 0;border:1px solid rgba(201,140,122,.55);border-radius:12px;color:#F7F2EA;text-decoration:none;font-size:18px;line-height:1.35}
+.doclink b{color:#C98C7A}
+.doclink .small{display:block;margin-top:2px}
+.center{text-align:center}
+footer{padding:18px;text-align:center;font-size:14px;color:#8a7a70}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+<p class="wordmark">Luxe Signature &amp; Co.</p>
+<p class="sub">Cleaning &amp; Services &middot; Terri Rabich, Co-Owner</p>
+<p class="verse">&ldquo;By wisdom a house is built, and by understanding it is established.&rdquo; &mdash; Proverbs 24:3</p>
+</header>
+<p class="hint">On your iPhone: tap Share, then &ldquo;Add to Home Screen&rdquo; to keep Luxe on your home screen. Everything you save here stays on your phone.</p>
+<main>
+
+<!-- TODAY / SCHEDULE -->
+<section class="tab active" id="tab-today">
+<h2>Today &amp; Schedule</h2>
+<div class="card">
+<h3>Upcoming jobs</h3>
+<div id="apptList"></div>
+</div>
+<div class="card">
+<h3>Add a job</h3>
+<label>Client</label>
+<input id="apptClient" list="clientNames" placeholder="Client name">
+<datalist id="clientNames"></datalist>
+<div class="row">
+<div><label>Date</label><input id="apptDate" type="date"></div>
+<div><label>Time</label><input id="apptTime" type="time" value="09:00"></div>
+</div>
+<label>Address</label>
+<input id="apptAddress" placeholder="Street, town">
+<label>Service</label>
+<select id="apptService">
+<option value="">— pick one —</option>
+<option>Standard Clean</option>
+<option>Deep Clean</option>
+<option>Move-In / Move-Out</option>
+<option>Turnover</option>
+<option>Organizing</option>
+<option>Laundry</option>
+<option>Car Cleaning</option>
+</select>
+<label>Notes</label>
+<textarea id="apptNotes" placeholder="Anything to remember for this job"></textarea>
+<button class="btn" onclick="addAppt()">Add job</button>
+</div>
+</section>
+
+<!-- CLIENTS -->
+<section class="tab" id="tab-clients">
+<h2>Clients</h2>
+<div class="card">
+<h3>Your clients</h3>
+<div id="clientList"></div>
+</div>
+<div class="card">
+<h3>Add a client</h3>
+<label>Name</label>
+<input id="clName" placeholder="Client name">
+<label>Phone</label>
+<input id="clPhone" type="tel" placeholder="(217) 555-0100">
+<label>Email</label>
+<input id="clEmail" type="email" placeholder="client@email.com">
+<label>Address</label>
+<input id="clAddress" placeholder="Street, town">
+<label>Notes</label>
+<textarea id="clNotes" placeholder="How you met them, what they like, anything to remember"></textarea>
+<button class="btn" onclick="addClient()">Add client</button>
+</div>
+</section>
+
+<!-- TO-DO -->
+<section class="tab" id="tab-todo">
+<h2>To-Do</h2>
+<div class="card">
+<div id="todoList"></div>
+<div class="row" style="margin-top:12px">
+<input id="todoText" placeholder="Add something to do…" onkeydown="if(event.key==='Enter')addTodo()">
+<button class="btn btn-small" onclick="addTodo()">Add</button>
+</div>
+</div>
+</section>
+
+<!-- FORMS -->
+<section class="tab" id="tab-forms">
+<h2>Forms &amp; Checklists</h2>
+
+<div class="card">
+<h3>Client intake form</h3>
+<label>Client</label>
+<select id="intakeClient" onchange="loadIntake()"></select>
+<label>Date</label>
+<input id="inDate" type="date">
+<label>Address</label>
+<input id="inAddress">
+<div class="row">
+<div><label>Phone</label><input id="inPhone" type="tel"></div>
+<div><label>Email</label><input id="inEmail" type="email"></div>
+</div>
+<label>Cleaning schedule</label>
+<select id="inSchedule">
+<option value="">— pick one —</option>
+<option>Weekly</option>
+<option>Bi-Weekly (Every 2 Weeks)</option>
+<option>Monthly</option>
+<option>One-Time Clean</option>
+</select>
+<label>Service type</label>
+<select id="inService">
+<option value="">— pick one —</option>
+<option>Standard Clean</option>
+<option>Deep Clean</option>
+<option>Move-In / Move-Out</option>
+<option>Turnover</option>
+<option>Organizing</option>
+<option>Laundry</option>
+</select>
+<label>Best way to contact</label>
+<select id="inContact">
+<option value="">— pick one —</option>
+<option>Call</option>
+<option>Text</option>
+<option>Facebook Messenger</option>
+<option>Email</option>
+</select>
+<label>Payment preference</label>
+<select id="inPayment">
+<option value="">— pick one —</option>
+<option>Cash</option>
+<option>Check</option>
+<option>Card</option>
+<option>Square Invoice</option>
+</select>
+<label>Day / time preferences</label>
+<input id="inDayTime" placeholder="e.g. Mondays, mornings">
+<label>Photo permission</label>
+<select id="inPhoto">
+<option value="">— pick one —</option>
+<option value="Yes">Yes — non-identifying before and after photos may be shared for business purposes only</option>
+<option value="No">No</option>
+</select>
+<label>Pets?</label>
+<select id="inPets">
+<option value="">— pick one —</option>
+<option>Yes</option>
+<option>No</option>
+</select>
+<label>Pet names / type / breed</label>
+<input id="inPetDetail" placeholder="e.g. Max, golden retriever">
+<label>Laundry products</label>
+<select id="inLaundry">
+<option value="">— pick one —</option>
+<option>Use Client&rsquo;s Products</option>
+<option>Use Ours (Extra Fee)</option>
+<option>No Laundry Needed</option>
+</select>
+<label>Home access</label>
+<select id="inAccess">
+<option value="">— pick one —</option>
+<option>I Will Be Home</option>
+<option>Key Provided</option>
+<option>Lockbox / Code</option>
+<option>Other</option>
+</select>
+<label>Lockbox / code (if any)</label>
+<input id="inCode" placeholder="Code or where the key is">
+<label>Cleaning preferences / special requests</label>
+<textarea id="inPrefs"></textarea>
+<label>Additional notes / special instructions</label>
+<textarea id="inNotes"></textarea>
+<button class="btn" onclick="saveIntake()">Save intake form</button>
+</div>
+
+<div class="card">
+<h3>Cleaning checklist</h3>
+<label>Checklist</label>
+<select id="checkList" onchange="renderChecklist()">
+<option value="room">Room-to-Room Checklist</option>
+<option value="basic">Basic Cleaning Checklist</option>
+<option value="deep">Deep Cleaning Checklist</option>
+</select>
+<label>For this job</label>
+<select id="checkJob" onchange="renderChecklist()"></select>
+<div id="checklistBody"></div>
+<button class="btn btn-ghost" onclick="clearChecklist()">Clear all checks</button>
+</div>
+</section>
+
+<!-- INVOICE -->
+<section class="tab" id="tab-invoice">
+<h2>Invoice &amp; Money</h2>
+<div class="card">
+<h3>New invoice</h3>
+<label>Client</label>
+<input id="invClient" list="clientNames" placeholder="Client name">
+<div class="row">
+<div><label>Date</label><input id="invDate" type="date"></div>
+<div><label>Amount paid ($) </label><input id="invAmount" type="number" min="0" step="0.01" placeholder="0.00"></div>
+</div>
+<label>Luxe portion (agreed before the job)</label>
+<select id="invLuxePct" onchange="previewInvoice()">
+<option value="0.15">15%</option>
+<option value="0.30">30%</option>
+</select>
+</div>
+<div id="invPreview" style="margin-top:12px"></div>
+<button class="btn" onclick="saveInvoice()">Save invoice</button>
+</div>
+<div class="card">
+<h3>Saved invoices</h3>
+<div id="invoiceList"></div>
+<p class="small">Luxe money rule: the Luxe portion (15% or 30%, agreed before the job) comes off the top. The rest is yours, minus a 25% tax holdback &mdash; that&rsquo;s your draw.</p>
+</div>
+<div class="card">
+<h3>Back up my data</h3>
+<p class="small">Your appointments, clients, to-dos, forms and invoices live on this phone. Tap below to save a copy you can keep in your Files or send to yourself.</p>
+<button class="btn btn-ghost" onclick="exportData()">Download a backup copy</button>
+</div>
+</section>
+
+
+<!-- SUPPLIES -->
+<section class="tab" id="tab-supplies">
+<h2>Supplies</h2>
+<div class="card">
+<h3>Supplier list</h3>
+<p class="small">Green = go, yellow = hold, red = stop. Reply = did they answer us? Tap a status to filter the list.</p>
+<div class="row" style="margin-bottom:10px">
+<button class="btn btn-small" onclick="setSupFilter('all')" id="sf-all">All</button>
+<button class="btn btn-small btn-ghost" onclick="setSupFilter('go')" id="sf-go">Go</button>
+<button class="btn btn-small btn-ghost" onclick="setSupFilter('hold')" id="sf-hold">Hold</button>
+<button class="btn btn-small btn-ghost" onclick="setSupFilter('stop')" id="sf-stop">Stop</button>
+</div>
+<input id="supSearch" placeholder="Search suppliers…" oninput="renderSuppliers()">
+<div id="supList"></div>
+</div>
+<div class="card">
+<h3>Cleaning supply guide</h3>
+<p class="small">What to use on each surface — the store product, and the Luxe homemade version underneath it. Luxe rules: never mix bleach with vinegar or ammonia. Never use vinegar on stone (granite, marble). Test a small hidden spot first. Label every bottle.</p>
+<div id="guideBody"></div>
+</div>
+</section>
+
+</main>
+<footer>
+Terri Rabich (217) 313-3632<br>
+luxesignatureandco@gmail.com &bull; luxesignatureandco.com
+</footer>
+</div>
+
+<nav class="tabbar">
+<button class="active" onclick="showTab('today',this)"><span class="ico">&#128197;</span>Today</button>
+<button onclick="showTab('clients',this)"><span class="ico">&#128100;</span>Clients</button>
+<button onclick="showTab('todo',this)"><span class="ico">&#10003;</span>To-Do</button>
+<button onclick="showTab('forms',this)"><span class="ico">&#128196;</span>Forms</button>
+<button onclick="showTab('invoice',this)"><span class="ico">&#36;</span>Invoice</button>
+<button onclick="showTab('supplies',this)"><span class="ico">&#129532;</span>Supplies</button>
+</nav>
+
+<script>
+var KEY = "luxeAppTerriV1";
+var uid = function(){ return "id" + Date.now().toString(36) + Math.floor(Math.random()*999); };
+
+var ROOMS = [
+{name:"Entryway", tasks:["Sweep / vacuum floor","Mop floor","Dust light fixtures","Wipe door handles","Shake out doormat","Clean mirror"]},
+{name:"Living Room", tasks:["Dust all surfaces","Dust ceiling fan","Vacuum upholstery","Vacuum floors","Mop floors","Wipe light switches","Fluff pillows & tidy","Clean glass / sliding doors"]},
+{name:"Kitchen", tasks:["Wipe counters","Clean stovetop","Wipe appliance exteriors","Clean microwave inside & out","Clean sink & faucet","Wipe cabinet fronts","Empty trash","Sweep floor","Mop floor","Clean backsplash"]},
+{name:"Dining Room", tasks:["Dust table & chairs","Wipe table","Vacuum / mop floor","Dust light fixture","Polish wood (if requested)"]},
+{name:"Bathroom 1", tasks:["Clean toilet","Clean shower / tub","Clean sink & faucet","Clean mirror","Wipe counters","Empty trash","Sweep floor","Mop floor"]},
+{name:"Bathroom 2", tasks:["Clean toilet","Clean shower / tub","Clean sink & faucet","Clean mirror","Wipe counters","Empty trash","Sweep floor","Mop floor"]},
+{name:"Bedroom 1", tasks:["Dust surfaces","Make bed / change linens","Vacuum floors","Mop floors","Wipe mirrors","Tidy & organize"]},
+{name:"Bedroom 2", tasks:["Dust surfaces","Make bed / change linens","Vacuum floors","Mop floors","Wipe mirrors","Tidy & organize"]},
+{name:"Laundry Room", tasks:["Wipe washer & dryer","Wipe counters","Sweep floor","Mop floor","Wash / dry / fold (if requested)"]},
+{name:"Hallways & Stairs", tasks:["Dust","Vacuum stairs","Mop","Wipe railings & switches"]},
+{name:"Home Office", tasks:["Dust desk & surfaces","Vacuum / mop","Empty trash","Tidy"]},
+{name:"Extras (if requested)", tasks:["Inside fridge","Inside oven","Interior windows","Baseboards","Ceiling fans","Light fixtures"]}
+];
+
+var BASIC = ["Dust all surfaces","Vacuum all floors","Mop hard floors","Clean kitchen counters & stovetop","Clean kitchen sink","Wipe appliance exteriors","Clean toilets, sinks & showers","Clean bathroom mirrors","Empty all trash","Wipe light switches & door handles","Fluff pillows & tidy","Make beds / change linens (if requested)"];
+var DEEP = BASIC.concat(["Inside fridge","Inside oven","Clean microwave inside & out","Wipe cabinet fronts","Clean backsplash","Baseboards","Interior windows","Ceiling fans","Light fixtures","Vacuum upholstery","Clean glass / sliding doors","Polish wood (if requested)","Wash / dry / fold (if requested)"]);
+
+var SUPPLIERS = [];
+var GUIDE = [{"group": "Floors", "items": [{"s": "Hardwood floors", "p": "Bona Hardwood Floor Cleaner", "l": "Luxe Wood Floor Wash: 1 gallon warm water + 2-3 drops castile soap. Damp-mop only, never soak wood; dry any standing water right away.", "n": "Never use vinegar on wood floors \u2014 it dulls the finish over time."}, {"s": "Laminate floors", "p": "Bona / Swiffer WetJet", "l": "Luxe Laminate Wash: spray bottle with 2 cups water + 1/2 cup white vinegar + 1 drop dish soap. Mist and damp-mop; never flood laminate.", "n": "Too much water swells laminate edges."}, {"s": "Tile floors", "p": "Tile floor cleaner", "l": "Luxe Tile Wash: 1 gallon warm water + 1/2 cup white vinegar + a few drops dish soap. Mop, then rinse-mop with plain water.", "n": ""}, {"s": "Grout", "p": "Grout cleaner", "l": "Luxe Grout Paste: baking soda + a little water into a paste. Scrub with an old toothbrush, let sit 10 minutes, rinse.", "n": "For stained grout, swap the water for 3% hydrogen peroxide in the paste."}, {"s": "Vinyl / LVP floors", "p": "Vinyl floor cleaner", "l": "Luxe Vinyl Wash: 1 gallon warm water + 1/4 cup white vinegar + 1 drop dish soap. Damp-mop.", "n": ""}, {"s": "Carpet spots", "p": "Carpet spot cleaner", "l": "Luxe Carpet Spot: sprinkle baking soda to deodorize, then vacuum. For spots, dab (do not rub) with 1 cup water + 1/4 cup white vinegar + a drop of dish soap.", "n": "Test a hidden spot first."}]}, {"group": "Counters & sinks", "items": [{"s": "Granite counters", "p": "Granite Gold Daily Cleaner", "l": "Luxe Stone Spray: spray bottle of warm water + a few drops dish soap. Wipe, then buff dry.", "n": "NEVER vinegar, lemon or anything acidic on granite or marble \u2014 acid etches stone."}, {"s": "Quartz counters", "p": "Quartz cleaner", "l": "Luxe Quartz Spray: warm water + a few drops dish soap. For dried spots, a baking-soda paste, then rinse.", "n": ""}, {"s": "Laminate counters", "p": "All-purpose spray", "l": "Luxe Counter Spray: 2 cups water + 1/2 cup white vinegar + a few drops dish soap. Spray, wipe, done.", "n": ""}, {"s": "Butcher block", "p": "Butcher block cleaner", "l": "Luxe Block Scrub: sprinkle coarse salt, rub with half a lemon, wipe clean. Rub in a little food-safe mineral oil once dry.", "n": ""}, {"s": "Stainless steel sink", "p": "Bar Keepers Friend", "l": "Luxe Steel Sink Paste: baking soda + a little water into a paste. Scrub with the grain, rinse, then a quick vinegar rinse for shine.", "n": "The Luxe match for Bar Keepers Friend \u2014 same shine, no harsh fumes."}, {"s": "Porcelain sink", "p": "Bar Keepers Friend / Soft Scrub", "l": "Luxe Porcelain Paste: baking soda paste. Scrub, let sit 10 minutes, rinse.", "n": ""}]}, {"group": "Stainless steel, glass & bathroom", "items": [{"s": "Stainless steel appliances", "p": "Bar Keepers Friend / Weiman Stainless Steel Cleaner", "l": "Luxe Steel Spray: spray white vinegar, wipe with the grain. Then a pea-size drop of olive oil on a soft cloth, buff with the grain.", "n": "Always wipe WITH the grain, never in circles."}, {"s": "Glass & mirrors", "p": "Windex / Invisible Glass", "l": "Luxe Glass Spray: 2 cups water + 1/2 cup white vinegar + 1/4 tsp dish soap. Spray, wipe with a microfiber cloth.", "n": ""}, {"s": "Tub & shower", "p": "Scrubbing Bubbles / Soft Scrub", "l": "Luxe Tub Scrub: baking soda + a squirt of dish soap into a paste. Scrub, rinse. For soap scum, spray vinegar first, wait 10 minutes, then scrub.", "n": ""}, {"s": "Toilet", "p": "Toilet bowl cleaner", "l": "Luxe Bowl Clean: sprinkle 1 cup baking soda in the bowl, add 1 cup white vinegar, let it fizz 10 minutes, scrub and flush.", "n": "Never mix vinegar with a bleach toilet cleaner \u2014 use one or the other, never both."}, {"s": "Showerhead", "p": "Lime remover", "l": "Luxe Showerhead Soak: fill a bag with white vinegar, tie it over the showerhead, leave overnight, rinse.", "n": ""}]}, {"group": "All-purpose", "items": [{"s": "Everyday all-purpose spray", "p": "Mrs. Meyer's / all-purpose spray", "l": "Luxe Everyday Spray: 2 cups water + 1/2 cup white vinegar + 1 tsp dish soap + a few drops of your Luxe scent oil (Cherry Noir or Linen & Lilac). Shake before each use.", "n": "Skip the vinegar on stone \u2014 use the Stone Spray there instead."}, {"s": "Wood furniture", "p": "Pledge / wood polish", "l": "Luxe Wood Polish: 1/2 cup olive oil + 1/4 cup white vinegar, shake well. Rub on with a soft cloth, buff dry.", "n": ""}, {"s": "Laundry whites", "p": "OxiClean", "l": "Luxe Whites Boost: 1/2 cup baking soda in the wash + 1/2 cup white vinegar in the rinse.", "n": ""}]}];
+function seed(){
+return {
+appointments:[],
+clients:[],
+todos:[{id:"t1", text:"Welcome to your Luxe office, Terri — add your first client to get started", done:false}],
+invoices:[],
+intake:{},
+checks:{}
+};
+}
+var state;
+try { state = JSON.parse(localStorage.getItem(KEY)) || seed(); }
+catch(e){ state = seed(); }
+if(!state.appointments) state = seed();
+function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+function money(n){ return "$" + (Math.round(n*100)/100).toFixed(2); }
+function fmtDate(d){
+if(!d) return "";
+var p = d.split("-"); if(p.length!==3) return d;
+var dt = new Date(+p[0], +p[1]-1, +p[2]);
+return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dt.getDay()] + " " + ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][dt.getMonth()] + " " + (+p[2]) + ", " + p[0];
+}
+function fmtTime(t){
+if(!t) return "";
+var p = t.split(":"); var h = +p[0]; var ap = h>=12 ? "PM" : "AM"; h = h%12; if(h===0) h=12;
+return h + ":" + p[1] + " " + ap;
+}
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+function showTab(name, btn){
+document.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("active"); });
+document.getElementById("tab-"+name).classList.add("active");
+document.querySelectorAll(".tabbar button").forEach(function(b){ b.classList.remove("active"); });
+if(btn) btn.classList.add("active");
+window.scrollTo(0,0);
+}
+
+function renderAppts(){
+var list = state.appointments.slice().sort(function(a,b){ return (a.date+a.time).localeCompare(b.date+b.time); });
+var html = "";
+if(!list.length) html = "<p class='small'>No jobs yet. Add your first one below.</p>";
+list.forEach(function(a){
+var st = a.status==="done" ? "<span class='pill green'>Done</span>" : "<span class='pill'>Scheduled</span>";
+html += "<div class='item" + (a.status==="done"?" done":"") + "'><div class='body'>"
++ "<div class='title'>" + esc(a.client) + st + "</div>"
++ "<div class='meta'><b>" + fmtDate(a.date) + "</b> at " + fmtTime(a.time) + "</div>"
++ (a.service ? "<div class='meta'>" + esc(a.service) + "</div>" : "")
++ (a.address ? "<div class='meta'>" + esc(a.address) + "</div>" : "")
++ (a.notes ? "<div class='meta'>" + esc(a.notes) + "</div>" : "")
++ "</div><div>"
++ (a.status!=="done" ? "<button class='btn btn-small btn-ghost' onclick=\"markDone('" + a.id + "')\">Done</button> " : "")
++ "<button class='btn btn-small btn-ghost' onclick=\"delAppt('" + a.id + "')\">Delete</button>"
++ "</div></div>";
+});
+document.getElementById("apptList").innerHTML = html;
+var dl = document.getElementById("clientNames");
+dl.innerHTML = state.clients.map(function(c){ return "<option value='" + esc(c.name) + "'>"; }).join("");
+}
+function addAppt(){
+var client = document.getElementById("apptClient").value.trim();
+var date = document.getElementById("apptDate").value;
+var time = document.getElementById("apptTime").value || "09:00";
+if(!client || !date){ alert("Add a client name and a date for the job."); return; }
+state.appointments.push({id:uid(), client:client, date:date, time:time,
+address:document.getElementById("apptAddress").value.trim(),
+service:document.getElementById("apptService").value,
+notes:document.getElementById("apptNotes").value.trim(), status:"scheduled"});
+save();
+["apptClient","apptAddress","apptNotes"].forEach(function(i){ document.getElementById(i).value=""; });
+document.getElementById("apptService").value="";
+renderAppts(); renderCheckJobs();
+}
+function markDone(id){ var a = state.appointments.find(function(x){ return x.id===id; }); if(a){ a.status="done"; save(); renderAppts(); } }
+function delAppt(id){ if(!confirm("Delete this job?")) return; state.appointments = state.appointments.filter(function(x){ return x.id!==id; }); save(); renderAppts(); renderCheckJobs(); }
+
+function renderClients(){
+var html = "";
+if(!state.clients.length) html = "<p class='small'>No clients yet.</p>";
+state.clients.forEach(function(c){
+html += "<div class='item'><div class='body'>"
++ "<div class='title'>" + esc(c.name) + "</div>"
++ (c.phone ? "<div class='meta'>&#9742; <a style='color:#C98C7A' href='tel:" + esc(c.phone.replace(/[^0-9+]/g,"")) + "'>" + esc(c.phone) + "</a></div>" : "")
++ (c.address ? "<div class='meta'>" + esc(c.address) + "</div>" : "")
++ (c.notes ? "<div class='meta'>" + esc(c.notes) + "</div>" : "")
++ "</div><div><button class='btn btn-small btn-ghost' onclick=\"delClient('" + c.id + "')\">Delete</button></div></div>";
+});
+document.getElementById("clientList").innerHTML = html;
+var sel = document.getElementById("intakeClient");
+var cur = sel.value;
+sel.innerHTML = state.clients.map(function(c){ return "<option value='" + c.id + "'>" + esc(c.name) + "</option>"; }).join("");
+if(cur) sel.value = cur;
+}
+function addClient(){
+var name = document.getElementById("clName").value.trim();
+if(!name){ alert("Add the client's name."); return; }
+state.clients.push({id:uid(), name:name,
+phone:document.getElementById("clPhone").value.trim(),
+email:document.getElementById("clEmail").value.trim(),
+address:document.getElementById("clAddress").value.trim(),
+notes:document.getElementById("clNotes").value.trim()});
+save();
+["clName","clPhone","clEmail","clAddress","clNotes"].forEach(function(i){ document.getElementById(i).value=""; });
+renderClients(); renderAppts();
+}
+function delClient(id){ if(!confirm("Delete this client? Their saved intake form goes with them.")) return; state.clients = state.clients.filter(function(x){ return x.id!==id; }); delete state.intake[id]; save(); renderClients(); renderAppts(); loadIntake(); }
+
+function renderTodos(){
+var html = "";
+if(!state.todos.length) html = "<p class='small'>Nothing on the list. Nice.</p>";
+state.todos.forEach(function(t){
+html += "<div class='item" + (t.done?" done":"") + "'><input type='checkbox' " + (t.done?"checked":"") + " onchange=\"toggleTodo('" + t.id + "')\"><div class='body'><div class='title'>" + esc(t.text) + "</div></div><button class='btn btn-small btn-ghost' onclick=\"delTodo('" + t.id + "')\">Delete</button></div>";
+});
+document.getElementById("todoList").innerHTML = html;
+}
+function addTodo(){
+var v = document.getElementById("todoText").value.trim();
+if(!v) return;
+state.todos.push({id:uid(), text:v, done:false});
+document.getElementById("todoText").value="";
+save(); renderTodos();
+}
+function toggleTodo(id){ var t = state.todos.find(function(x){ return x.id===id; }); if(t){ t.done=!t.done; save(); renderTodos(); } }
+function delTodo(id){ state.todos = state.todos.filter(function(x){ return x.id!==id; }); save(); renderTodos(); }
+
+var INTAKE_FIELDS = ["inDate","inAddress","inPhone","inEmail","inSchedule","inService","inContact","inPayment","inDayTime","inPhoto","inPets","inPetDetail","inLaundry","inAccess","inCode","inPrefs","inNotes"];
+function loadIntake(){
+var id = document.getElementById("intakeClient").value;
+if(!id) return;
+var c = state.clients.find(function(x){ return x.id===id; });
+var f = state.intake[id] || {};
+if(c){
+if(!f.inPhone) f.inPhone = c.phone || "";
+if(!f.inAddress) f.inAddress = c.address || "";
+if(!f.inEmail) f.inEmail = c.email || "";
+}
+INTAKE_FIELDS.forEach(function(k){ var el = document.getElementById(k); if(el) el.value = f[k] || ""; });
+}
+function saveIntake(){
+var id = document.getElementById("intakeClient").value;
+if(!id){ alert("Add a client first, then fill in their intake form."); return; }
+var f = {};
+INTAKE_FIELDS.forEach(function(k){ f[k] = document.getElementById(k).value; });
+state.intake[id] = f;
+save();
+alert("Intake form saved for this client.");
+}
+
+function renderCheckJobs(){
+var sel = document.getElementById("checkJob");
+var cur = sel.value;
+var opts = "<option value='general'>General (no job picked)</option>";
+state.appointments.slice().sort(function(a,b){ return (a.date+a.time).localeCompare(b.date+b.time); }).forEach(function(a){
+opts += "<option value='" + a.id + "'>" + esc(fmtDate(a.date) + " — " + a.client) + "</option>";
+});
+sel.innerHTML = opts;
+if(cur) sel.value = cur;
+}
+function checkKey(){ return document.getElementById("checkList").value + "|" + document.getElementById("checkJob").value; }
+function renderChecklist(){
+var list = document.getElementById("checkList").value;
+var key = checkKey();
+var saved = state.checks[key] || {};
+var html = "";
+function section(name, tasks, prefix){
+html += "<div class='room'>" + esc(name) + "</div>";
+tasks.forEach(function(t, i){
+var k = prefix + i;
+var on = saved[k] ? "checked" : "";
+html += "<label class='check'><input type='checkbox' " + on + " onchange=\"toggleCheck('" + key + "','" + k + "',this.checked)\"><span>" + esc(t) + "</span></label>";
+});
+}
+if(list==="room"){
+ROOMS.forEach(function(r, ri){ section(r.name, r.tasks, "r" + ri + "_"); });
+}else if(list==="basic"){
+section("Basic cleaning", BASIC, "b_");
+}else{
+section("Deep cleaning", DEEP, "d_");
+}
+document.getElementById("checklistBody").innerHTML = html;
+}
+function toggleCheck(key, k, on){
+if(!state.checks[key]) state.checks[key] = {};
+state.checks[key][k] = on;
+save();
+}
+function clearChecklist(){
+if(!confirm("Uncheck everything on this checklist for this job?")) return;
+delete state.checks[checkKey()];
+save(); renderChecklist();
+}
+
+function calcInvoice(){
+var amount = parseFloat(document.getElementById("invAmount").value) || 0;
+var pct = parseFloat(document.getElementById("invLuxePct").value) || 0.15;
+var reserve = amount * pct;
+var rest = amount - reserve;
+var hold = rest * 0.25;
+return {amount:amount, pct:pct, reserve:reserve, rest:rest, share:rest, hold:hold, draw:rest-hold};
+}
+function previewInvoice(){
+var c = calcInvoice();
+var el = document.getElementById("invPreview");
+if(!c.amount){ el.innerHTML = "<p class='small'>Enter an amount to see the split.</p>"; return; }
+el.innerHTML = "<div class='money'><span>Amount paid</span><span>" + money(c.amount) + "</span></div>"
++ "<div class='money'><span>Luxe portion (" + Math.round(c.pct*100) + "%)</span><span>" + money(c.reserve) + "</span></div>"
++ "<div class='money'><span>Your share</span><span>" + money(c.share) + "</span></div>"
++ "<div class='money'><span>Tax holdback (25%)</span><span>" + money(c.hold) + "</span></div>"
++ "<div class='money total'><span>Your draw</span><span>" + money(c.draw) + "</span></div>";
+}
+function saveInvoice(){
+var client = document.getElementById("invClient").value.trim();
+var date = document.getElementById("invDate").value;
+var c = calcInvoice();
+if(!client || !date || !c.amount){ alert("Add a client, a date, and an amount."); return; }
+state.invoices.push({id:uid(), client:client, date:date, amount:c.amount,
+reserve:c.reserve, rest:c.rest, share:c.share, hold:c.hold, draw:c.draw});
+save();
+document.getElementById("invClient").value="";
+document.getElementById("invAmount").value="";
+renderInvoices(); previewInvoice();
+}
+function renderInvoices(){
+var html = "";
+if(!state.invoices.length) html = "<p class='small'>No invoices saved yet.</p>";
+state.invoices.slice().reverse().forEach(function(v){
+html += "<div class='item'><div class='body'>"
++ "<div class='title'>" + esc(v.client) + " — " + money(v.amount) + "</div>"
++ "<div class='meta'>" + fmtDate(v.date) + "</div>"
++ "<div class='meta'>Luxe portion " + money(v.reserve) + " &bull; Your draw " + money(v.draw != null ? v.draw : v.pegDraw) + "</div>"
++ "</div><button class='btn btn-small btn-ghost' onclick=\"delInvoice('" + v.id + "')\">Delete</button></div>";
+});
+document.getElementById("invoiceList").innerHTML = html;
+}
+function delInvoice(id){ if(!confirm("Delete this saved invoice?")) return; state.invoices = state.invoices.filter(function(x){ return x.id!==id; }); save(); renderInvoices(); }
+
+function exportData(){
+var blob = new Blob([JSON.stringify(state, null, 2)], {type:"application/json"});
+var a = document.createElement("a");
+a.href = URL.createObjectURL(blob);
+a.download = "luxe-office-backup.json";
+a.click();
+setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+}
+
+function renderSuppliers(){
+var q = (document.getElementById("supSearch").value||"").toLowerCase();
+var f = window._supFilter || "all";
+var list = SUPPLIERS.filter(function(s){ return (f==="all"||s.s===f) && (!q || s.n.toLowerCase().indexOf(q)>-1 || s.p.toLowerCase().indexOf(q)>-1); });
+var html = "<p class='small'>" + list.length + " suppliers</p>";
+list.forEach(function(s){
+var pill = s.s==="go" ? "<span class='pill green'>Go</span>" : (s.s==="stop" ? "<span class='pill'>Stop</span>" : "<span class='pill'>Hold</span>");
+html += "<div class='item'><div class='body'><div class='title'>" + esc(s.n) + " " + pill + "</div><div class='meta'>" + esc(s.p) + "</div><div class='meta'>Reply: <b>" + (s.r?"Yes":"No") + "</b></div></div></div>";
+});
+document.getElementById("supList").innerHTML = html;
+["all","go","hold","stop"].forEach(function(k){ var b=document.getElementById("sf-"+k); if(b) b.className = "btn btn-small" + (k===f?"":" btn-ghost"); });
+}
+function setSupFilter(f){ window._supFilter=f; renderSuppliers(); }
+function renderGuide(){
+var html = "";
+GUIDE.forEach(function(g){
+html += "<div class='room'>" + esc(g.group) + "</div>";
+g.items.forEach(function(it){
+html += "<div class='item'><div class='body'><div class='title'>" + esc(it.s) + "</div>"
++ "<div class='meta'>Store: <b>" + esc(it.p) + "</b></div>"
++ "<div class='meta'>Luxe version: " + esc(it.l) + "</div>"
++ (it.n ? "<div class='meta'>" + esc(it.n) + "</div>" : "")
++ "</div></div>";
+});
+});
+document.getElementById("guideBody").innerHTML = html;
+}
+
+document.getElementById("invAmount").addEventListener("input", previewInvoice);
+renderAppts();
+renderClients();
+renderTodos();
+renderCheckJobs();
+renderChecklist();
+loadIntake();
+renderInvoices();
+renderSuppliers();
+renderGuide();
+previewInvoice();
+</script>
+</body>
+</html>
