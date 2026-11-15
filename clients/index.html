@@ -32,6 +32,12 @@
   .formula{margin:16px 0 0;padding:14px 16px;border:1px solid rgba(201,140,122,.55);border-radius:12px;background:rgba(201,140,122,.1);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.08rem;color:var(--ivory)}
   .formula strong{color:#efc1b5}
   .tip-note{margin:12px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.05rem;color:rgba(247,242,234,.85)}
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  @media(max-width:560px){.team-grid{grid-template-columns:1fr}}
+  .team-card{padding:24px 22px;border:1px solid rgba(201,140,122,.44);border-radius:14px;background:rgba(255,255,255,.03);text-align:center}
+  .team-card strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.35rem;color:var(--ivory)}
+  .team-card span{display:block;color:#d9a394;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:4px 0 10px}
+  .team-card a{color:#efc1b5;font-weight:700;text-decoration:none;font-size:1.05rem}
   form{margin-top:18px}
   label{display:block;font-weight:700;font-size:.9rem;margin:16px 0 6px}
   input,select,textarea{width:100%;padding:13px 14px;border:1px solid rgba(201,140,122,.5);border-radius:10px;background:#141114;color:var(--ivory);font:inherit;font-size:16px}
@@ -183,6 +189,31 @@
         
         <p class="luxe-tip"><strong>Luxe tip:</strong> Never mix bleach with anything — not vinegar, not other cleaners. One cleaner at a time, and crack a window while you work.</p>
       </article>
+
+      <article class="tip-card" id="tip-21">
+        <p class="tip-kicker">WINE &amp; CHAMPAGNE STAIN TIP</p>
+        <p class="tip-intro">Spilled red wine or champagne? Don&#x27;t panic — and don&#x27;t rub it. Here&#x27;s how to get it out before it sets.</p>
+        <ol class="tip-steps"><li>Blot right away with a clean cloth — press, don&#x27;t rub, or you&#x27;ll push it deeper into the fabric.</li><li>For red wine, cover the spot with salt or baking soda to pull the wine out. Let it sit, then vacuum or brush it off.</li><li>Rinse with cold water from the back of the fabric if you can — cold, never hot.</li><li>For a stain that&#x27;s still there, dab with a little dish soap and hydrogen peroxide on whites and light colors only, then wash as usual.</li><li>Champagne is lighter — blot it up, rinse with cold water, and wash as usual. Don&#x27;t let it dry first.</li></ol>
+        
+        <p class="luxe-tip"><strong>Luxe tip:</strong> The faster you get to it, the easier it comes out. And never use hot water on a wine stain — heat sets it for good.</p>
+      </article>
+    </section>
+
+    <section id="team">
+      <h2>Meet your Luxe team</h2>
+      <p class="lede">Real people, right here in Macoupin County. Call or text either of us.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <strong>Peg Wells</strong>
+          <span>Owner</span>
+          <a href="tel:+12176854520">217-685-4520</a>
+        </div>
+        <div class="team-card">
+          <strong>Terri Rabich</strong>
+          <span>Partner &amp; Cleaner</span>
+          <a href="tel:+12173133632">217-313-3632</a>
+        </div>
+      </div>
     </section>
 
     <section id="book">
