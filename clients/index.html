@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ivory:#F7F2EA;--rose:#C98C7A;--blush:#E6CFCB;--rose-metal:linear-gradient(105deg,#8f544a 0%,#c77f6d 14%,#f6c9b9 31%,#a65a50 48%,#f2b9a7 64%,#7e403b 80%,#d79683 100%)}
+  :root{--ivory:#F7F2EA;--rose:#C98C7A;--blush:#E6CFCB;--champagne:#D9B98A;--champagne-soft:#E8D5B0;--rose-metal:linear-gradient(105deg,#8f544a 0%,#c77f6d 14%,#f6c9b9 31%,#a65a50 48%,#f2b9a7 64%,#7e403b 80%,#d79683 100%)}
   *{box-sizing:border-box}
-  body{margin:0;background:#0a090b;color:var(--ivory);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.6}
+  body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,rgba(217,185,138,.14),transparent 60%),radial-gradient(900px 500px at 50% 110%,rgba(201,140,122,.10),transparent 60%),#0a090b;color:var(--ivory);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.6}
   a{color:inherit}
   .wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}
   header{text-align:center;padding:34px 20px 10px}
@@ -35,10 +35,10 @@
   .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
   .team-story{max-width:640px;margin:14px auto 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.12rem;line-height:1.6;color:rgba(247,242,234,.92);text-align:center}
   @media(max-width:560px){.team-grid{grid-template-columns:1fr}}
-  .team-card{padding:24px 22px;border:1px solid rgba(201,140,122,.44);border-radius:14px;background:rgba(255,255,255,.03);text-align:center}
-  .team-card strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.35rem;color:var(--ivory)}
-  .team-card span{display:block;color:#d9a394;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:4px 0 10px}
-  .team-card a{color:#efc1b5;font-weight:700;text-decoration:none;font-size:1.05rem}
+  .team-card{padding:28px 22px;border:1px solid rgba(217,185,138,.55);border-radius:16px;background:linear-gradient(160deg,rgba(217,185,138,.12),rgba(201,140,122,.07));text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.35)}
+  .team-card strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--ivory);letter-spacing:.02em}
+  .team-card span{display:block;color:var(--champagne);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:6px 0 12px}
+  .team-card a{color:#f0d9c2;font-weight:700;text-decoration:none;font-size:1.08rem}
   form{margin-top:18px}
   label{display:block;font-weight:700;font-size:.9rem;margin:16px 0 6px}
   input,select,textarea{width:100%;padding:13px 14px;border:1px solid rgba(201,140,122,.5);border-radius:10px;background:#141114;color:var(--ivory);font:inherit;font-size:16px}
