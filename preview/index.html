@@ -858,8 +858,19 @@
       box-shadow:0 2px 8px rgba(0,0,0,.25);
     }
 
-    /* Peg Nov 17 — background: champagne silk. Boxes: white pearl marble. (From her screenshot.) */
+    /* Peg Nov 17 — background: pearl white swirl. Pages rotate: silk (picture) / mono (text). All same size. */
     body{
+      background:
+        radial-gradient(120% 60% at 20% 0%,rgba(255,255,255,.95),transparent 55%),
+        radial-gradient(90% 50% at 85% 20%,rgba(200,200,205,.55),transparent 60%),
+        radial-gradient(100% 60% at 10% 80%,rgba(210,210,215,.5),transparent 60%),
+        radial-gradient(70% 45% at 60% 55%,rgba(201,140,122,.10),transparent 60%),
+        linear-gradient(115deg,transparent 0 30%,rgba(180,180,185,.32) 30.6%,transparent 31.4% 62%,rgba(190,190,195,.25) 62.6%,transparent 63.4%),
+        linear-gradient(35deg,transparent 0 45%,rgba(255,255,255,.75) 45.6%,transparent 46.4%),
+        linear-gradient(135deg,#FFFFFF 0%,#F7F7F7 30%,#EFEFEF 55%,#F9F9F9 75%,#F2F2F2 100%);
+    }
+    /* Picture pages: silk. First page (hero) is a picture page on silk. */
+    .hero,.why,.special,footer{
       background:
         radial-gradient(90% 55% at 15% 10%,rgba(255,255,255,.85),transparent 60%),
         radial-gradient(70% 50% at 85% 25%,rgba(214,192,168,.35),transparent 60%),
@@ -868,6 +879,15 @@
         linear-gradient(120deg,transparent 0 30%,rgba(190,164,138,.22) 30.6%,transparent 31.4% 60%,rgba(205,180,155,.18) 60.6%,transparent 61.4%),
         linear-gradient(135deg,#FDF8F0 0%,#F7EDE0 25%,#EFE0D2 50%,#F9F1E6 70%,#EAD9C8 100%);
     }
+    /* Text pages: mono — soft warm mauve/rose, kept light so dark text reads. */
+    .services,.about,.showcase{
+      background:
+        radial-gradient(100% 60% at 50% 0%,rgba(255,255,255,.8),transparent 55%),
+        radial-gradient(80% 55% at 15% 85%,rgba(170,130,125,.25),transparent 60%),
+        radial-gradient(70% 50% at 85% 80%,rgba(160,120,115,.20),transparent 60%),
+        linear-gradient(135deg,#F2E6E1 0%,#E8D5CF 30%,#DCC3BC 55%,#E5D2CC 75%,#EFE2DD 100%);
+    }
+    /* Picture boxes: white pearl marble. */
     .logo-panel,.photo-placeholder,.photo-item{
       background:
         radial-gradient(120% 90% at 20% 10%,rgba(255,255,255,.95),transparent 55%),
@@ -879,6 +899,11 @@
     /* Placeholder text reads on white marble now (was ivory on dark grey). */
     .photo-placeholder strong{color:#5a3a2e}
     .photo-placeholder span{color:rgba(90,58,46,.65)}
+    /* Same size pages: uniform radius, shadow, and padding. */
+    .hero,.services,.why,.about,.special,.showcase,footer{
+      border-radius:20px;
+      box-shadow:0 18px 40px rgba(0,0,0,.18),0 4px 12px rgba(0,0,0,.10);
+    }
   </style>
 </head>
 <body>
