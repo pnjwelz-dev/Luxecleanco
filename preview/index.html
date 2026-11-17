@@ -912,6 +912,26 @@
       -webkit-background-clip:text;background-clip:text;
       -webkit-text-fill-color:transparent;color:transparent;
     }
+    /* Nav bar: cashmere, not gold. Rose gold script on the cashmere. */
+    .site-nav{
+      background:linear-gradient(120deg,#FAF6F0 0%,#F7F2EA 30%,#EFE0D2 55%,#E6CFCB 80%,#F7F2EA 100%);
+      color:#2E1F1A;
+      border-bottom-color:rgba(69,51,45,.35);
+      box-shadow:0 10px 32px rgba(0,0,0,.18);
+    }
+    .site-nav .nav-mark{
+      background:var(--rose-glitter);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent!important;color:transparent!important;
+      filter:none;animation:none;
+    }
+    .site-nav .nav-links a{color:#2E1F1A}
+    .site-nav .nav-links a:hover,.site-nav .nav-links a:focus-visible{color:#5a3a28}
+    .site-nav .menu-button{border-color:rgba(46,31,26,.6);color:#2E1F1A}
+    @media(max-width:1000px){
+      .site-nav .nav-links{background:linear-gradient(120deg,#FAF6F0 0%,#F7F2EA 30%,#EFE0D2 55%,#E6CFCB 80%,#F7F2EA 100%);border-bottom-color:rgba(69,51,45,.35)}
+      .site-nav .nav-links a{border-bottom-color:rgba(46,31,26,.18);color:#2E1F1A}
+    }
   </style>
 </head>
 <body>
