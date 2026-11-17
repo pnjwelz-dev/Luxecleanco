@@ -774,6 +774,21 @@
     .notice-bar{color:#F9EBE5}
 
     /* ===== Peg's direction Nov 17 — clean, elegant, luxurious, simple ===== */
+    /* 3D background: pearl champagne rose dust + smoky swirl grey. */
+    body{
+      background:
+        radial-gradient(130% 70% at 50% -10%,rgba(255,255,255,.65),transparent 55%),
+        radial-gradient(70% 45% at 88% 12%,rgba(61,61,65,.30),transparent 62%),
+        radial-gradient(80% 50% at 8% 88%,rgba(51,51,56,.26),transparent 60%),
+        radial-gradient(60% 40% at 78% 78%,rgba(61,61,65,.18),transparent 65%),
+        radial-gradient(55% 38% at 18% 28%,rgba(61,61,65,.14),transparent 65%),
+        linear-gradient(125deg,transparent 0 28%,rgba(61,61,65,.16) 28.6%,transparent 29.6% 64%,rgba(61,61,65,.11) 64.6%,transparent 65.6%),
+        linear-gradient(38deg,transparent 0 42%,rgba(255,255,255,.40) 42.6%,transparent 43.6%),
+        linear-gradient(135deg,#FBF3EC 0%,#F9EBE5 22%,#F3E2D4 45%,#F7EDE3 65%,#EFE0D2 85%,#F9EBE5 100%);
+    }
+    /* Notice bar sits on the light background now — dark copper so it reads. */
+    .notice-bar{color:#8a5a3b}
+
     /* Headings: Dancing Script, larger, metallic rose gold. */
     h1,h2,h3{font-family:'Dancing Script',var(--script)}
     .section-heading h2,.about-head h2,.special-top h2,.showcase-heading h2,.reviews-head h3,.contact h2,.why h2{font-size:clamp(4rem,7.5vw,6.5rem)}
@@ -794,32 +809,29 @@
       color:#6e4536;
       border-color:rgba(184,115,79,.55);
     }
-    .menu-card h3,.service h3,.moms-card h3,.community-card h3{
-      background:linear-gradient(105deg,#7a4526 0%,#b8734f 30%,#d9a05b 50%,#8a5a3b 75%,#7a4526 100%);
-      -webkit-background-clip:text;background-clip:text;
-      -webkit-text-fill-color:transparent;color:transparent;
-      -webkit-text-stroke:0;
-    }
-    .menu-kicker,.price-head span,.home-size{
+    /* Headings + sub-headings inside the champagne boxes: metallic rose gold (rose-glitter rule). */
+    /* Table labels stay metallic copper. */
+    .price-head span,.home-size{
       background:linear-gradient(105deg,#7a4526 0%,#b8734f 40%,#8a5a3b 100%);
       -webkit-background-clip:text;background-clip:text;
       -webkit-text-stroke:0;
     }
-    .price-row:not(.price-head) span:not(.home-size){color:#6e4536}
     .price-row:not(.price-head) span:not(.home-size)::before{
       background:linear-gradient(105deg,#7a4526 0%,#b8734f 40%,#8a5a3b 100%);
       -webkit-background-clip:text;background-clip:text;
       -webkit-text-stroke:0;
     }
-    .menu-card p,.service p{color:#6e4536}
-    .menu-card .menu-copy,.menu-card .menu-list li,.service .menu-copy{color:#6e4536}
-    .menu-card .menu-price{color:#6e4536!important}
-    .menu-card .cleaning-note{color:rgba(110,69,54,.75)!important}
-    .moms-card p,.community-card p{color:rgba(110,69,54,.92)}
-    .review-placeholder p{color:rgba(110,69,54,.78)}
-    .review-placeholder strong{color:#6e4536}
+    /* Body text inside the champagne boxes: metallic copper. */
+    .menu-card p,.menu-card .menu-copy,.menu-card .menu-price,.menu-card .menu-list li,.menu-card .price-row span:not(.home-size),.menu-card .cleaning-note,
+    .service p,.service .menu-copy,.service .menu-price,
+    .moms-card p,.community-card p,
+    .review-placeholder p,.review-placeholder strong,
+    .about-story .story-turn p{
+      background:linear-gradient(105deg,#6e4536 0%,#8a5a3b 25%,#b8734f 50%,#8a5a3b 75%,#6e4536 100%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent!important;color:transparent!important;
+    }
     .review-placeholder .quote-mark{color:#b8734f}
-    .about-story .story-turn p{color:#6e4536}
 
     /* Picture boxes: dark smoky swirl greys. */
     .photo-placeholder,.photo-item{
