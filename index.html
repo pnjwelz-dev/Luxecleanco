@@ -374,7 +374,7 @@
 
     /* Black marble + glittery rose gold & champagne (Peg, Nov 16, 2026) */
     :root{
-      --rose-metal:linear-gradient(105deg,#8f544a 0%,#c77f6d 12%,#f6c9b9 26%,#e8c87a 40%,#f9e6b8 50%,#e8b4a0 62%,#a65a50 76%,#d79683 88%,#e8c87a 100%);
+      --rose-metal:linear-gradient(105deg,#7a4526 0%,#c98a5b 12%,#e8c87a 24%,#f9e6b8 36%,#b8734f 48%,#e8b4a0 60%,#a65a50 72%,#e8c87a 84%,#8a5a3b 100%);
       --champagne-glow:linear-gradient(105deg,#c9a86a 0%,#e8c87a 18%,#f9e6b8 38%,#c98a5b 55%,#efc9a8 72%,#b8734f 88%,#e8c87a 100%);
     }
     /* Metallic headings must stay text, never solid blocks: the drop-shadow
@@ -392,13 +392,13 @@
     footer .footer-brand,
     footer .tagline{
       background:var(--rose-metal);
-      background-size:200% 100%;
+      background-size:250% 100%;
       -webkit-background-clip:text;
       background-clip:text;
       -webkit-text-fill-color:transparent;
       color:transparent;
       filter:none;
-      animation:rose-shimmer 7s ease-in-out infinite;
+      animation:rose-shimmer 5s ease-in-out infinite;
     }
     @keyframes rose-shimmer{
       0%,100%{background-position:0% 50%}
@@ -411,30 +411,41 @@
 
     /* Blurred fairy lights + fine glitter in the header, on the black marble */
     .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
-      radial-gradient(circle at 8% 18%,rgba(232,200,122,.5) 0,rgba(232,200,122,0) 90px),
-      radial-gradient(circle at 22% 72%,rgba(185,130,128,.42) 0,rgba(185,130,128,0) 80px),
-      radial-gradient(circle at 85% 22%,rgba(232,200,122,.42) 0,rgba(232,200,122,0) 100px),
-      radial-gradient(circle at 92% 68%,rgba(201,140,122,.38) 0,rgba(201,140,122,0) 70px),
-      radial-gradient(circle at 55% 8%,rgba(249,230,184,.45) 0,rgba(249,230,184,0) 85px),
-      radial-gradient(circle at 40% 88%,rgba(232,200,122,.32) 0,rgba(232,200,122,0) 95px),
-      radial-gradient(circle at 68% 78%,rgba(185,130,128,.32) 0,rgba(185,130,128,0) 75px),
-      radial-gradient(circle at 35% 40%,rgba(249,230,184,.28) 0,rgba(249,230,184,0) 60px),
+      radial-gradient(circle at 8% 18%,rgba(240,214,170,.32) 0,rgba(240,214,170,0) 90px),
+      radial-gradient(circle at 22% 72%,rgba(230,207,203,.28) 0,rgba(230,207,203,0) 80px),
+      radial-gradient(circle at 85% 22%,rgba(240,214,170,.28) 0,rgba(240,214,170,0) 100px),
+      radial-gradient(circle at 92% 68%,rgba(230,207,203,.25) 0,rgba(230,207,203,0) 70px),
+      radial-gradient(circle at 55% 8%,rgba(249,236,205,.3) 0,rgba(249,236,205,0) 85px),
+      radial-gradient(circle at 40% 88%,rgba(240,214,170,.22) 0,rgba(240,214,170,0) 95px),
+      radial-gradient(circle at 68% 78%,rgba(230,207,203,.22) 0,rgba(230,207,203,0) 75px),
+      radial-gradient(circle at 35% 40%,rgba(249,236,205,.2) 0,rgba(249,236,205,0) 60px),
       linear-gradient(90deg,rgba(0,0,0,.02),rgba(0,0,0,.18));
       filter:blur(3px)}
     .hero-sparkle{position:absolute;inset:0;z-index:0;pointer-events:none;background:
-      radial-gradient(circle at 12% 22%,rgba(249,230,184,.95) 0 1.5px,transparent 2.5px),
-      radial-gradient(circle at 28% 68%,rgba(232,200,122,.85) 0 1px,transparent 2px),
-      radial-gradient(circle at 45% 12%,rgba(255,255,255,.9) 0 1px,transparent 2px),
-      radial-gradient(circle at 62% 82%,rgba(239,201,168,.9) 0 1.5px,transparent 2.5px),
-      radial-gradient(circle at 78% 30%,rgba(249,230,184,.85) 0 1px,transparent 2px),
-      radial-gradient(circle at 90% 55%,rgba(255,255,255,.8) 0 1px,transparent 2px),
-      radial-gradient(circle at 18% 88%,rgba(232,200,122,.8) 0 1px,transparent 2px),
-      radial-gradient(circle at 52% 48%,rgba(249,230,184,.8) 0 1px,transparent 2px),
-      radial-gradient(circle at 70% 8%,rgba(255,255,255,.85) 0 1.5px,transparent 2.5px),
-      radial-gradient(circle at 33% 38%,rgba(239,201,168,.75) 0 1px,transparent 2px);
+      radial-gradient(circle at 12% 22%,rgba(249,236,205,.7) 0 1.5px,transparent 2.5px),
+      radial-gradient(circle at 28% 68%,rgba(240,214,170,.6) 0 1px,transparent 2px),
+      radial-gradient(circle at 45% 12%,rgba(255,250,240,.65) 0 1px,transparent 2px),
+      radial-gradient(circle at 62% 82%,rgba(239,214,190,.65) 0 1.5px,transparent 2.5px),
+      radial-gradient(circle at 78% 30%,rgba(249,236,205,.6) 0 1px,transparent 2px),
+      radial-gradient(circle at 90% 55%,rgba(255,250,240,.55) 0 1px,transparent 2px),
+      radial-gradient(circle at 18% 88%,rgba(240,214,170,.55) 0 1px,transparent 2px),
+      radial-gradient(circle at 52% 48%,rgba(249,236,205,.55) 0 1px,transparent 2px),
+      radial-gradient(circle at 70% 8%,rgba(255,250,240,.6) 0 1.5px,transparent 2.5px),
+      radial-gradient(circle at 33% 38%,rgba(239,214,190,.5) 0 1px,transparent 2px);
       animation:glitter-twinkle 3.5s ease-in-out infinite}
-    @keyframes glitter-twinkle{0%,100%{opacity:.55}50%{opacity:1}}
+    @keyframes glitter-twinkle{0%,100%{opacity:.4}50%{opacity:.85}}
     .hero-grid{position:relative;z-index:1}
+
+    /* Header box in rose gold */
+    .site-nav{background:linear-gradient(115deg,#c98a5b 0%,#e8b4a0 22%,#d9a05b 48%,#e8c87a 72%,#b8734f 100%);color:#2E1F1A;border-bottom-color:rgba(69,51,45,.4);box-shadow:0 10px 32px rgba(0,0,0,.3)}
+    .nav-mark{background:none;-webkit-text-fill-color:#2E1F1A;color:#2E1F1A;filter:none;animation:none}
+    .nav-links a{color:#2E1F1A}
+    .nav-links a:hover,.nav-links a:focus-visible{color:#5a3a28}
+    .menu-button{border-color:rgba(46,31,26,.6);color:#2E1F1A}
+    @media(max-width:700px){
+      .nav-links{background:linear-gradient(115deg,#c98a5b 0%,#e8b4a0 30%,#d9a05b 60%,#b8734f 100%);border-bottom-color:rgba(69,51,45,.4)}
+      .nav-links a{border-bottom-color:rgba(46,31,26,.18)}
+    }
 
     /* Owner login + photo/review manager */
     .owner-login-btn{background:none;border:1px solid rgba(247,240,230,.5);color:rgba(247,240,230,.8);border-radius:999px;padding:8px 18px;font-size:.82rem;font-weight:700;letter-spacing:.06em;cursor:pointer;font-family:var(--sans)}
