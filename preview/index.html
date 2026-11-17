@@ -862,14 +862,15 @@
     /* Body text font: Open Sans. */
     :root{--sans:"Open Sans",system-ui,sans-serif}
 
-    /* Background: pearl white silk. */
+    /* Background: white pearl marble (CSS approximation of Peg's texture photo). */
     body{
       background:
-        radial-gradient(120% 60% at 20% 0%,rgba(255,255,255,.9),transparent 55%),
-        radial-gradient(90% 50% at 85% 20%,rgba(220,220,220,.5),transparent 60%),
-        radial-gradient(100% 60% at 10% 80%,rgba(230,230,230,.45),transparent 60%),
-        linear-gradient(115deg,transparent 0 30%,rgba(200,200,200,.28) 30.6%,transparent 31.4% 62%,rgba(210,210,210,.22) 62.6%,transparent 63.4%),
-        linear-gradient(35deg,transparent 0 45%,rgba(255,255,255,.7) 45.6%,transparent 46.4%),
+        radial-gradient(120% 60% at 20% 0%,rgba(255,255,255,.95),transparent 55%),
+        radial-gradient(90% 50% at 85% 20%,rgba(200,200,205,.55),transparent 60%),
+        radial-gradient(100% 60% at 10% 80%,rgba(210,210,215,.5),transparent 60%),
+        radial-gradient(70% 45% at 60% 55%,rgba(201,140,122,.12),transparent 60%),
+        linear-gradient(115deg,transparent 0 30%,rgba(180,180,185,.35) 30.6%,transparent 31.4% 62%,rgba(190,190,195,.28) 62.6%,transparent 63.4%),
+        linear-gradient(35deg,transparent 0 45%,rgba(255,255,255,.75) 45.6%,transparent 46.4%),
         linear-gradient(135deg,#FFFFFF 0%,#F7F7F7 30%,#EFEFEF 55%,#F9F9F9 75%,#F2F2F2 100%);
     }
 
@@ -879,26 +880,35 @@
     }
 
     /* Pages alternate: dark grey smoky swirl (picture pages) / champagne pinkish-brown metallic (text pages). */
+    /* Grey smoke boxes: translucent at 70% — the pearl marble shows through 30%. Text stays full strength. */
     .hero,.why,.special,footer{
-      background:var(--grey-marble);
+      background:
+        linear-gradient(125deg,transparent 0 25%,rgba(255,255,255,.07) 25.4%,rgba(88,86,90,.04) 26.4%,transparent 27.2% 64%,rgba(201,140,122,.07) 64.3%,transparent 65.1%),
+        linear-gradient(34deg,transparent 0 45%,rgba(255,255,255,.035) 45.5%,transparent 46.4%),
+        radial-gradient(ellipse at 18% 14%,rgba(130,127,133,.16),transparent 34%),
+        radial-gradient(ellipse at 86% 82%,rgba(68,66,71,.34),transparent 38%),
+        rgba(17,17,20,.7);
     }
     .services,.about,.showcase{
       background:linear-gradient(135deg,#d9a08c 0%,#c98a7a 25%,#b8734f 50%,#a06a4a 75%,#c98a7a 100%);
     }
 
-    /* Picture boxes: smoky grey, no gold trim. Grey is for pictures. */
+    /* Picture boxes: WHITE — cream silk, per Peg Nov 17 ("White box for pic"). */
     .logo-panel{
       background:
-        radial-gradient(120% 90% at 18% 8%,rgba(255,255,255,.07),transparent 55%),
-        radial-gradient(90% 70% at 85% 90%,rgba(0,0,0,.22),transparent 55%),
-        linear-gradient(135deg,#3d3d41 0%,#333338 45%,#45454a 70%,#2e2e33 100%);
+        radial-gradient(120% 90% at 18% 8%,rgba(255,255,255,.95),transparent 55%),
+        radial-gradient(90% 70% at 85% 90%,rgba(230,207,203,.35),transparent 55%),
+        linear-gradient(135deg,#FDFBF7 0%,#F7F2EA 40%,#EFE0D2 75%,#F9F4EC 100%);
       border-color:rgba(201,140,122,.5);
       animation:none;
     }
     .logo-panel:before,.logo-panel:after{display:none}
     .photo-placeholder,.photo-item{
-      background:linear-gradient(135deg,#3d3d41 0%,#333338 45%,#45454a 70%,#2e2e33 100%);
+      background:linear-gradient(135deg,#FDFBF7 0%,#F7F2EA 40%,#EFE0D2 75%,#F9F4EC 100%);
     }
+    /* Placeholder text reads on white now (was ivory on dark grey). */
+    .photo-placeholder strong{color:#5a3a2e}
+    .photo-placeholder span{color:rgba(90,58,46,.65)}
 
     /* Text boxes: champagne pinkish-brown metallic, deep enough to read pearl text on. */
     .services .menu-card,.showcase .review-placeholder,.about .about-story .story-turn,.service,
@@ -937,6 +947,20 @@
       -webkit-text-stroke:.25px #8a5a3b;
     }
     .review-placeholder .quote-mark{color:#d99a88}
+
+    /* Nav bar: a very beautiful cashmere, not gold. Rose gold script on the cashmere. */
+    .site-nav{
+      background:linear-gradient(120deg,#FAF6F0 0%,#F7F2EA 30%,#EFE0D2 55%,#E6CFCB 80%,#F7F2EA 100%);
+      color:#2E1F1A;
+      border-bottom-color:rgba(69,51,45,.35);
+      box-shadow:0 10px 32px rgba(0,0,0,.18);
+    }
+    .site-nav .nav-mark{
+      background:var(--rose-glitter);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent!important;color:transparent!important;
+      filter:none;animation:none;
+    }
   </style>
 </head>
 <body>
