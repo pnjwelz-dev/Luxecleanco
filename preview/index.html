@@ -858,7 +858,7 @@
       box-shadow:0 2px 8px rgba(0,0,0,.25);
     }
 
-    /* ===== Peg's direction Nov 17 (round 3) — pearl white silk, alternating pages ===== */
+    /* ===== Peg's direction Nov 17 (round 4, corrected) — floating 3D pages ===== */
     /* Body text font: Open Sans. */
     :root{--sans:"Open Sans",system-ui,sans-serif}
 
@@ -873,15 +873,20 @@
         linear-gradient(135deg,#FFFFFF 0%,#F7F7F7 30%,#EFEFEF 55%,#F9F9F9 75%,#F2F2F2 100%);
     }
 
-    /* Alternating pages: browns/cashmere/champagne vs smoky dark grey swirl. */
-    .hero,.why,.special,footer{
-      background:linear-gradient(135deg,#5a3a2e 0%,#6e4536 25%,#8a5a3b 45%,#7a4a3a 65%,#5a3a2e 100%);
-    }
-    .services,.about,.showcase{
-      background:var(--grey-marble);
+    /* Floating pages, 3D look: soft shadow so each page lifts off the silk. */
+    .hero,.services,.why,.about,.special,.showcase,footer{
+      box-shadow:0 18px 40px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18);
     }
 
-    /* Picture box: smoky grey, logo rose gold (replaces gold shimmer frame). */
+    /* Pages alternate: dark grey smoky swirl (picture pages) / champagne pinkish-brown metallic (text pages). */
+    .hero,.why,.special,footer{
+      background:var(--grey-marble);
+    }
+    .services,.about,.showcase{
+      background:linear-gradient(135deg,#d9a08c 0%,#c98a7a 25%,#b8734f 50%,#a06a4a 75%,#c98a7a 100%);
+    }
+
+    /* Picture boxes: smoky grey, no gold trim. Grey is for pictures. */
     .logo-panel{
       background:
         radial-gradient(120% 90% at 18% 8%,rgba(255,255,255,.07),transparent 55%),
@@ -891,35 +896,39 @@
       animation:none;
     }
     .logo-panel:before,.logo-panel:after{display:none}
-
-    /* Text boxes: dark, so cashmere body text reads. */
-    .services .menu-card,.showcase .review-placeholder,.about .about-story .story-turn,.service{
-      background:#26262b;
-      border-color:rgba(201,140,122,.42);
-    }
-    .special .moms-card,.special .community-card{
-      background:#4a2e22;
-      border-color:rgba(201,140,122,.42);
+    .photo-placeholder,.photo-item{
+      background:linear-gradient(135deg,#3d3d41 0%,#333338 45%,#45454a 70%,#2e2e33 100%);
     }
 
-    /* Body text: elegant cashmere, Open Sans (replaces metallic copper gradient). */
-    .menu-card p,.menu-card .menu-copy,.menu-card .menu-price,.menu-card .menu-list li,.menu-card .price-row span:not(.home-size),.menu-card .cleaning-note,
-    .service p,.service .menu-copy,.service .menu-price,
+    /* Text boxes: champagne pinkish-brown metallic, deep enough to read pearl text on. */
+    .services .menu-card,.showcase .review-placeholder,.about .about-story .story-turn,.service,
+    .special .moms-card,.special .community-card,
+    .why-copy{
+      background:linear-gradient(135deg,#8a5a3b 0%,#6e4536 30%,#5a3a2e 55%,#7a4a3a 80%,#8a5a3b 100%);
+      border-color:rgba(201,140,122,.42);
+      box-shadow:0 10px 24px rgba(0,0,0,.22);
+    }
+    .why-copy{padding:24px 26px;border-radius:16px}
+
+    /* Body text: pearl color, Open Sans. */
+    .menu-card p,.menu-card .menu-copy,.menu-card .menu-list li,.menu-card .cleaning-note,
+    .service p,.service .menu-copy,
     .moms-card p,.community-card p,
     .review-placeholder p,.review-placeholder strong,
     .about-story .story-turn p{
       background:none;
-      -webkit-text-fill-color:#EFE0D2!important;color:#EFE0D2!important;
+      -webkit-text-fill-color:#F7F2EA!important;color:#F7F2EA!important;
       font-family:var(--sans);
     }
     .section-heading p,.why-copy p,.about-body,.about-story>p:first-child,.about-story .belief,.about-story .closing,.hero-copy>p:not(.welcome),footer{
-      color:#EFE0D2;
+      color:#F7F2EA;
     }
 
-    /* Headings + sub-headings: metallic rose gold, calligraphy font. */
-    .menu-kicker,.price-head span,.home-size{
+    /* Headings, sub-headings and prices: metallic rose gold, calligraphy font. */
+    .menu-kicker,.price-head span,.home-size,.menu-card .menu-price,.service .menu-price{
       background:var(--rose-glitter);
       -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent!important;color:transparent!important;
       -webkit-text-stroke:.5px #8a5a3b;
     }
     .price-row:not(.price-head) span:not(.home-size)::before{
