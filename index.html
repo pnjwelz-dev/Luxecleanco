@@ -376,7 +376,8 @@
     :root{
       --rose-metal:linear-gradient(105deg,#7a4526 0%,#c98a5b 12%,#e8c87a 24%,#f9e6b8 36%,#b8734f 48%,#e8b4a0 60%,#a65a50 72%,#e8c87a 84%,#8a5a3b 100%);
       --champagne-glow:linear-gradient(105deg,#c9a86a 0%,#e8c87a 18%,#f9e6b8 38%,#c98a5b 55%,#efc9a8 72%,#b8734f 88%,#e8c87a 100%);
-      /* Glitz rose gold headings — metallic rose gold + fine rose gold glitter. */
+      /* Glitz rose gold headings — metallic rose gold + fine rose gold glitter.
+         Kept light and pink so it reads rose gold, not brown. */
       --rose-glitter:
         radial-gradient(circle at 12% 25%,rgba(242,201,184,.9) 0 1px,transparent 2px),
         radial-gradient(circle at 30% 60%,rgba(232,180,160,.85) 0 1px,transparent 2px),
@@ -384,7 +385,7 @@
         radial-gradient(circle at 65% 70%,rgba(217,160,91,.85) 0 1px,transparent 2px),
         radial-gradient(circle at 82% 40%,rgba(242,201,184,.9) 0 1px,transparent 2px),
         radial-gradient(circle at 55% 85%,rgba(232,180,160,.85) 0 1px,transparent 2px),
-        linear-gradient(105deg,#8a4a42 0%,#d99a88 20%,#f7d9ce 38%,#e8b4a0 55%,#c98a7a 72%,#b76e79 88%,#d99a88 100%);
+        linear-gradient(105deg,#b76e79 0%,#e8b4a0 20%,#f7d9ce 38%,#f2c9b8 55%,#d99a88 72%,#c98a7a 88%,#b76e79 100%);
       /* Rose Pearl Dust #F9EBE5 for the other letters; grey layers. */
       --ivory:#F9EBE5;
       --marble-soft:
@@ -453,7 +454,7 @@
       background-clip:text;
       -webkit-text-fill-color:transparent;
       color:transparent;
-      -webkit-text-stroke:1.5px #8a5a3b;
+      -webkit-text-stroke:.5px #8a5a3b;
       filter:none;
       animation:none;
     }
@@ -563,14 +564,15 @@
       filter:blur(1px);animation:glitter-twinkle 3s ease-in-out infinite}
     .footer-content{position:relative;z-index:1}
 
-    /* Luxe signing: rose gold glitter inside, copper outline */
+    /* Luxe signing: rose gold glitter inside, copper outline.
+       Nav mark uses a deeper rose gold so it reads on the light rose gold bar. */
     .nav-mark{
-      background:var(--rose-glitter);
+      background:linear-gradient(105deg,#8a4a42 0%,#b76e79 25%,#d99a88 50%,#c98a7a 75%,#8a4a42 100%);
       -webkit-background-clip:text;
       background-clip:text;
       -webkit-text-fill-color:transparent;
       color:transparent;
-      -webkit-text-stroke:1.5px #8a5a3b;
+      -webkit-text-stroke:.75px #6e4536;
       filter:none;
       animation:none;
     }
@@ -580,7 +582,7 @@
       background-clip:text;
       -webkit-text-fill-color:transparent;
       color:transparent;
-      -webkit-text-stroke:2px #8a5a3b;
+      -webkit-text-stroke:1px #8a5a3b;
       filter:none;
       animation:none;
     }
@@ -594,7 +596,7 @@
       background-clip:text;
       -webkit-text-fill-color:transparent!important;
       color:transparent!important;
-      -webkit-text-stroke:.75px #8a5a3b;
+      -webkit-text-stroke:.5px #8a5a3b;
       font-weight:800;
     }
     .price-row:not(.price-head) span:not(.home-size)::before{
@@ -603,7 +605,7 @@
       background-clip:text;
       -webkit-text-fill-color:transparent;
       color:transparent;
-      -webkit-text-stroke:.5px #8a5a3b;
+      -webkit-text-stroke:.25px #8a5a3b;
     }
 
     /* Big rectangles: rose gold shimmer */
@@ -667,6 +669,109 @@
     .owner-only{display:none!important}
     body.owner-mode .owner-only{display:block!important}
     body.owner-mode .owner-only-inline{display:inline-flex!important}
+
+    /* ============================================================
+       Peg, Nov 17 — darker smoky grey boxes on light pearl rose dust.
+       No glitter, no fairy lights in the background. Whole page matches.
+       ============================================================ */
+
+    /* Very back background: light pearl rose dust. */
+    body{background:#F9EBE5}
+
+    /* Clean smoky grey layers — no glitter dots, no gold bokeh.
+       Sections a touch lighter than the text boxes, so the boxes read darker. */
+    :root{
+      --rose-glitter:linear-gradient(105deg,#b76e79 0%,#e8b4a0 20%,#f7d9ce 38%,#f2c9b8 55%,#d99a88 72%,#c98a7a 88%,#b76e79 100%);
+      --marble:
+        linear-gradient(118deg,transparent 0 20%,rgba(249,235,232,.05) 20.3%,transparent 21.3% 55%,rgba(201,140,122,.05) 55.4%,transparent 56.5%),
+        linear-gradient(28deg,transparent 0 64%,rgba(249,235,232,.04) 64.4%,transparent 65.4%),
+        radial-gradient(ellipse at 12% 22%,rgba(255,255,255,.05),transparent 28%),
+        radial-gradient(ellipse at 88% 76%,rgba(201,140,122,.05),transparent 30%),
+        #333338;
+      --grey-marble:
+        linear-gradient(125deg,transparent 0 25%,rgba(255,255,255,.06) 25.4%,rgba(88,86,90,.04) 26.4%,transparent 27.2% 64%,rgba(201,140,122,.06) 64.3%,transparent 65.1%),
+        linear-gradient(34deg,transparent 0 45%,rgba(255,255,255,.03) 45.5%,transparent 46.4%),
+        radial-gradient(ellipse at 18% 14%,rgba(130,127,133,.14),transparent 34%),
+        radial-gradient(ellipse at 86% 82%,rgba(68,66,71,.3),transparent 38%),
+        #3d3d41;
+      --marble-soft:
+        linear-gradient(132deg,transparent 0 34%,rgba(249,235,232,.04) 34.3%,transparent 35.1%),
+        linear-gradient(42deg,transparent 0 74%,rgba(201,140,122,.04) 74.4%,transparent 75.2%),
+        #3d3d41;
+    }
+
+    /* Dark smoky grey panels floating on the pearl rose dust page. */
+    .hero,.services,.why,.special{
+      margin:12px 16px;border-radius:18px;overflow:hidden;
+      background:var(--marble);background-attachment:scroll;
+    }
+    .about,.showcase,footer{
+      margin:12px 16px;border-radius:18px;overflow:hidden;
+      background:var(--grey-marble);background-attachment:scroll;
+    }
+
+    /* No glitter, no fairy lights anywhere in the background. */
+    .hero-sparkle,.page-sparkle,.footer-sparkle{display:none}
+    .hero:before,footer:before{display:none}
+
+    /* Text boxes: darker smoky grey, clean. No sliding sheen. */
+    .menu-card,.service,.moms-card,.community-card,.review-placeholder,.about-story .story-turn{
+      background:#26262b;
+    }
+    .menu-card:after{display:none}
+    .menu-card{box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+    /* Nav mark: deeper rose gold fancy font so it reads on the rose gold bar. */
+    .nav-mark{
+      background:linear-gradient(105deg,#8a4a42 0%,#b76e79 25%,#d99a88 50%,#c98a7a 75%,#8a4a42 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      color:transparent;
+      -webkit-text-stroke:.75px #6e4536;
+      filter:none;
+      animation:none;
+    }
+
+    /* Metallic gold shimmer glitter — the boxed buttons and the logo frame. */
+    @keyframes gold-shimmer{
+      0%,100%{background-position:0% 0,0% 0,0% 0,0% 0,0% 50%}
+      50%{background-position:0% 0,0% 0,0% 0,0% 0,100% 50%}
+    }
+    .btn-primary{
+      background:
+        radial-gradient(circle at 15% 30%,rgba(255,255,255,.75) 0 1px,transparent 2px),
+        radial-gradient(circle at 40% 70%,rgba(255,240,200,.8) 0 1px,transparent 2px),
+        radial-gradient(circle at 65% 25%,rgba(255,255,255,.75) 0 1px,transparent 2px),
+        radial-gradient(circle at 85% 65%,rgba(255,240,200,.8) 0 1px,transparent 2px),
+        linear-gradient(105deg,#c9a86a 0%,#e8c87a 25%,#f9e6b8 45%,#c98a5b 65%,#efc9a8 80%,#b8734f 100%);
+      background-size:100% 100%,100% 100%,100% 100%,100% 100%,200% 100%;
+      color:#241a17;
+      border:1px solid rgba(180,130,60,.85);
+      animation:gold-shimmer 4s ease-in-out infinite;
+    }
+    .btn-primary:hover,.btn-primary:focus-visible{
+      background:
+        radial-gradient(circle at 15% 30%,rgba(255,255,255,.75) 0 1px,transparent 2px),
+        radial-gradient(circle at 40% 70%,rgba(255,240,200,.8) 0 1px,transparent 2px),
+        radial-gradient(circle at 65% 25%,rgba(255,255,255,.75) 0 1px,transparent 2px),
+        radial-gradient(circle at 85% 65%,rgba(255,240,200,.8) 0 1px,transparent 2px),
+        linear-gradient(105deg,#c9a86a 0%,#e8c87a 25%,#f9e6b8 45%,#c98a5b 65%,#efc9a8 80%,#b8734f 100%);
+      background-size:100% 100%,100% 100%,100% 100%,100% 100%,200% 100%;
+      color:#241a17;
+      animation:gold-shimmer 4s ease-in-out infinite;
+    }
+    .logo-panel{
+      background:
+        radial-gradient(circle at 20% 25%,rgba(255,255,255,.7) 0 1px,transparent 2px),
+        radial-gradient(circle at 75% 70%,rgba(255,240,200,.75) 0 1px,transparent 2px),
+        linear-gradient(115deg,#c9a86a 0%,#e8c87a 30%,#f9e6b8 50%,#c98a5b 72%,#b8734f 100%);
+      border:1px solid rgba(180,130,60,.9);
+    }
+    .logo-panel:before,.logo-panel:after{border-color:#e8c87a}
+
+    /* Notice bar letters in pearl rose dust. */
+    .notice-bar{color:#F9EBE5}
   </style>
 </head>
 <body>
