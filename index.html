@@ -136,6 +136,22 @@
     .founders-story .founders-cadence{margin:20px auto 0;text-align:center;font-family:var(--script);font-size:2rem;line-height:1.45;color:#d99a88}
     .founders-story .founders-brand{margin:34px 0 4px;text-align:center;font-family:var(--script);font-size:2.55rem;line-height:1.2;color:#d99a88}
     .founders-story .founders-standard{text-align:center;font-style:italic;color:#efc1b5}
+    .about{background:var(--grey-marble);color:var(--ivory)}
+    .about-shell{max-width:920px}
+    .about-head{padding-bottom:38px;border-bottom:1px solid rgba(201,140,122,.38);margin-bottom:46px;text-align:center}
+    .about-head .rule{margin-inline:auto}
+    .about-head h2{font-size:clamp(3rem,6vw,4.8rem);line-height:1.05;margin-bottom:12px}
+    .about-tagline{margin:0;font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.55rem);font-style:italic;color:#efc1b5}
+    .about-body{max-width:790px;margin-inline:auto;font-family:var(--serif);font-size:1.01rem;line-height:1.92;color:rgba(247,242,234,.82)}
+    .about-body p{margin:0 0 24px}
+    .about-body h3{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--ivory);margin:48px 0 18px;text-align:center}
+    .about-standards{margin:34px 0;border-top:1px solid rgba(201,140,122,.4);border-bottom:1px solid rgba(201,140,122,.4)}
+    .about-standards div{padding:18px 20px;border-bottom:1px solid rgba(201,140,122,.28)}
+    .about-standards div:last-child{border-bottom:0}
+    .about-standards strong{display:block;color:var(--ivory);font-size:1.08rem;margin-bottom:4px}
+    .about-standards span{color:rgba(247,242,234,.82)}
+    .about-brand{margin:38px auto 0;text-align:center;font-family:var(--script);font-size:2rem;line-height:1.45;color:#d99a88}
+    .about-close{margin:34px 0 0;text-align:center;font-style:italic;color:#efc1b5}
     .about{display:none;background:var(--white);min-height:calc(100vh - 76px)}
     body.about-page main>section:not(.about){display:none}
     body.about-page .about{display:block}
@@ -355,6 +371,225 @@
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     .notice-bar{background:#1a1517;color:#F7F2EA;text-align:center;padding:12px 20px;font-size:.95rem;border-bottom:1px solid rgba(201,140,122,.45)}
+
+    /* Champagne Glow Luxury — Peg's new Luxe palette (Nov 16, 2026) */
+    :root{
+      --emerald:#45332D;
+      --emerald-dark:#3E2C25;
+      --ivory:#F7F0E6;
+      --charcoal:#45332D;
+      --rose:#B8734F;
+      --blush:#E8D5C1;
+      --white:#F7F0E6;
+      --marble:
+        radial-gradient(ellipse at 12% 18%,rgba(255,255,255,.75),transparent 32%),
+        radial-gradient(ellipse at 88% 82%,rgba(184,115,79,.14),transparent 34%),
+        radial-gradient(ellipse at 78% 12%,rgba(185,130,128,.12),transparent 30%),
+        linear-gradient(118deg,transparent 0 22%,rgba(255,255,255,.35) 22.3%,transparent 23.2% 58%,rgba(184,115,79,.06) 58.4%,transparent 59.4%),
+        #F7F0E6;
+      --marble-soft:
+        linear-gradient(132deg,transparent 0 34%,rgba(255,255,255,.4) 34.3%,transparent 35.1%),
+        radial-gradient(ellipse at 85% 20%,rgba(185,130,128,.10),transparent 32%),
+        #F7F0E6;
+      --grey-marble:
+        radial-gradient(ellipse at 18% 14%,rgba(255,255,255,.6),transparent 34%),
+        radial-gradient(ellipse at 86% 82%,rgba(184,115,79,.10),transparent 38%),
+        linear-gradient(125deg,transparent 0 25%,rgba(255,255,255,.4) 25.4%,transparent 26.4%),
+        #F3E9DB;
+      --rose-metal:linear-gradient(105deg,#B8734F 0%,#D9A05B 14%,#F6D9A8 31%,#B8734F 48%,#E8B4A0 64%,#8A5A3B 80%,#D9A05B 100%);
+      --champagne-glow:linear-gradient(105deg,#C9A86A 0%,#E8C87A 18%,#F9E6B8 38%,#C98A5B 55%,#EFC9A8 72%,#B8734F 88%,#E8C87A 100%);
+    }
+    body{background:var(--ivory);color:var(--charcoal)}
+    .notice-bar{background:#B8734F;color:#F7F0E6;border-bottom-color:rgba(69,51,45,.35)}
+    .site-nav{background:rgba(247,240,230,.97);color:var(--charcoal);border-bottom-color:rgba(184,115,79,.45);box-shadow:0 10px 32px rgba(69,51,45,.08)}
+    .nav-mark{color:var(--charcoal)}
+    .nav-links a{color:var(--charcoal)}
+    .nav-links a:hover,.nav-links a:focus-visible{color:var(--rose)}
+    .menu-button{border-color:rgba(69,51,45,.4);color:var(--charcoal)}
+    .hero{background:var(--marble);color:var(--charcoal)}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
+      radial-gradient(circle at 8% 18%,rgba(232,200,122,.55) 0,rgba(232,200,122,0) 70px),
+      radial-gradient(circle at 22% 72%,rgba(185,130,128,.45) 0,rgba(185,130,128,0) 60px),
+      radial-gradient(circle at 85% 25%,rgba(232,200,122,.45) 0,rgba(232,200,122,0) 80px),
+      radial-gradient(circle at 92% 65%,rgba(201,140,122,.4) 0,rgba(201,140,122,0) 55px),
+      radial-gradient(circle at 55% 10%,rgba(249,230,184,.5) 0,rgba(249,230,184,0) 65px),
+      radial-gradient(circle at 40% 88%,rgba(232,200,122,.35) 0,rgba(232,200,122,0) 75px),
+      radial-gradient(circle at 68% 78%,rgba(185,130,128,.35) 0,rgba(185,130,128,0) 60px);
+      filter:blur(2px)}
+    .hero:after{border-color:rgba(184,115,79,.35)}
+    .hero-copy>p:not(.welcome){color:rgba(69,51,45,.85)}
+    .welcome{color:var(--rose)}
+    .signature{color:var(--rose)}
+    .btn-primary{background:var(--rose);color:#F7F0E6;box-shadow:0 10px 30px rgba(184,115,79,.25)}
+    .btn-primary:hover,.btn-primary:focus-visible{background:#A8663F}
+    .btn-secondary{border-color:rgba(69,51,45,.55);color:var(--charcoal)}
+    .btn-secondary:hover,.btn-secondary:focus-visible{background:var(--charcoal);color:var(--ivory)}
+    .logo-panel{background:#FDF9F2;border-color:rgba(184,115,79,.65);box-shadow:0 34px 80px rgba(69,51,45,.18)}
+    .logo-panel img{background:#F7F0E6}
+    .logo-panel:before,.logo-panel:after{border-color:#B8734F}
+    .rule{background:var(--rose)}
+    .services,.about,.contact{background:var(--marble-soft);color:var(--charcoal)}
+    .section-heading h2,.service h3,.ask-line,.about-head h2,.about-verse,.about-story>p:first-child,.about-story .belief,.about-story .closing,.special-top h2,.contact h2,.contact-person strong{color:var(--charcoal)}
+    .section-heading p,.special-top p,.contact-lede{color:rgba(69,51,45,.78)}
+    .service-grid{border-color:#D9C8BD}
+    .service{background:#FDF9F2;border-color:#D9C8BD}
+    .service:nth-child(even){background:#F7EFE3}
+    .service p{color:rgba(69,51,45,.78)}
+    .service-no{color:var(--rose)}
+    .menu-card{background:#FDF9F2;border-color:rgba(184,115,79,.4);box-shadow:0 24px 65px rgba(69,51,45,.12)}
+    .menu-card:after{background:linear-gradient(132deg,transparent 0 48%,rgba(255,255,255,.5) 48.5%,transparent 49.4%)}
+    .menu-card p{color:rgba(69,51,45,.78)}
+    .menu-kicker{color:var(--rose)!important}
+    .price-table{border-top-color:rgba(184,115,79,.45)}
+    .price-row{border-bottom-color:rgba(184,115,79,.24)}
+    .price-head{color:var(--rose)}
+    .price-row:not(.price-head) span:not(.home-size){color:var(--charcoal)}
+    .home-size{color:rgba(69,51,45,.86)}
+    .cleaning-note{color:rgba(69,51,45,.62)!important}
+    .menu-price{color:var(--charcoal)!important}
+    .menu-price strong{color:var(--rose)}
+    .menu-list li{border-bottom-color:rgba(184,115,79,.22);color:rgba(69,51,45,.78)}
+    .menu-list strong{color:var(--charcoal)}
+    .quote-strip{border-top-color:rgba(184,115,79,.52);border-bottom-color:rgba(184,115,79,.28);background:rgba(232,213,193,.5)}
+    .quote-strip p{color:rgba(69,51,45,.8)}
+    .quote-strip strong{color:var(--charcoal)}
+    .pricing-fineprint{color:rgba(69,51,45,.62)}
+    .why{background:var(--marble);color:var(--charcoal)}
+    .why-copy p{color:rgba(69,51,45,.82)}
+    .why-callout{color:var(--rose)!important}
+    .why h2{color:var(--charcoal)}
+    .founders{background:var(--grey-marble);color:var(--charcoal)}
+    .founders-head{border-bottom-color:rgba(184,115,79,.38)}
+    .founders-subtitle{color:var(--rose)}
+    .founders-story{color:rgba(69,51,45,.82)}
+    .founders-story .founders-lead{color:var(--charcoal)}
+    .founders-story .founders-callout{border-top-color:rgba(184,115,79,.4);border-bottom-color:rgba(184,115,79,.4);color:var(--rose)}
+    .founders-values{border-top-color:rgba(184,115,79,.4);border-bottom-color:rgba(184,115,79,.4)}
+    .founders-values p{color:var(--charcoal)}
+    .founders-values p+ p{border-left-color:rgba(184,115,79,.28)}
+    .founders-story .founders-close{color:var(--charcoal)}
+    .founders-story .founders-cadence{color:var(--rose)}
+    .founders-story .founders-brand{color:var(--rose)}
+    .founders-story .founders-standard{color:var(--rose)}
+    .about{background:var(--grey-marble);color:var(--charcoal)}
+    .about-head{border-bottom-color:rgba(184,115,79,.38)}
+    .about-tagline{color:var(--rose)}
+    .about-body{color:rgba(69,51,45,.82)}
+    .about-body h3{color:var(--charcoal)}
+    .about-standards{border-top-color:rgba(184,115,79,.4);border-bottom-color:rgba(184,115,79,.4)}
+    .about-standards div{border-bottom-color:rgba(184,115,79,.28)}
+    .about-standards strong{color:var(--charcoal)}
+    .about-standards span{color:rgba(69,51,45,.82)}
+    .about-experience{list-style:none;margin:0 0 24px;padding:0;max-width:640px;margin-inline:auto}
+    .about-experience li{position:relative;padding:10px 0 10px 28px;border-bottom:1px solid rgba(184,115,79,.22);color:rgba(69,51,45,.85)}
+    .about-experience li:last-child{border-bottom:0}
+    .about-experience li:before{content:"";position:absolute;left:4px;top:1.15em;width:8px;height:8px;border:1px solid var(--rose);transform:rotate(45deg)}
+    .about-brand{color:var(--rose)}
+    .about-close{color:var(--rose)}
+    .about-story{color:rgba(69,51,45,.8)}
+    .about-story .story-turn{background:rgba(232,213,193,.55);border-top-color:#D9C8BD;border-bottom-color:#D9C8BD}
+    .about-subtitle{color:var(--rose)}
+    .about-verse{border-top-color:var(--rose);border-bottom-color:var(--rose);color:var(--charcoal)}
+    .about-verse cite{color:var(--rose)}
+    .about-story>p:first-child::first-letter{color:var(--rose)}
+    .special{background:var(--ivory);color:var(--charcoal)}
+    .special-top h2{color:var(--charcoal)}
+    .special-top p{color:rgba(69,51,45,.78)}
+    .moms-card{background:linear-gradient(145deg,#F3E3D8,#E8D5C1);color:#45332D;box-shadow:0 24px 65px rgba(69,51,45,.16)}
+    .moms-card p,.community-card p{color:rgba(69,51,45,.84)}
+    .community-card{background:linear-gradient(150deg,#F7EFE3,#E8D5C1);color:var(--charcoal);border-color:rgba(184,115,79,.44);box-shadow:0 24px 65px rgba(69,51,45,.16)}
+    .care-list li{color:rgba(69,51,45,.9)}
+    .care-list li:before{border-color:var(--rose)}
+    .quiet{color:var(--rose)!important}
+    .showcase{background:var(--grey-marble);color:var(--charcoal)}
+    .showcase-heading p{color:rgba(69,51,45,.78)}
+    .showcase-label{color:var(--rose)}
+    .photo-placeholder{border-color:rgba(184,115,79,.42);background:linear-gradient(135deg,rgba(255,255,255,.5),transparent 34%,rgba(184,115,79,.08)),rgba(247,240,230,.85)}
+    .photo-placeholder:before,.photo-placeholder:after{border-color:rgba(184,115,79,.72)}
+    .photo-placeholder svg{stroke:var(--rose)}
+    .photo-placeholder strong{color:var(--charcoal)}
+    .photo-placeholder span{color:rgba(69,51,45,.58)}
+    .reviews-block{border-top-color:rgba(184,115,79,.34)}
+    .reviews-head p{color:rgba(69,51,45,.72)}
+    .review-placeholder{border-top-color:rgba(184,115,79,.62);border-bottom-color:rgba(184,115,79,.28);background:rgba(247,240,230,.85)}
+    .review-placeholder .quote-mark{color:var(--rose)}
+    .review-placeholder strong{color:var(--charcoal)}
+    .review-placeholder p{color:rgba(69,51,45,.58)}
+    .contact{background:var(--marble-soft);color:var(--charcoal)}
+    .contact h2{color:var(--charcoal)}
+    .contact-lede{color:rgba(69,51,45,.78)}
+    .contact-list,.contact-person{border-color:rgba(184,115,79,.34)}
+    .contact-person strong{color:var(--charcoal)}
+    .contact-person a{color:var(--charcoal)}
+    .contact-person a:hover,.contact-person a:focus-visible{color:var(--rose)}
+    footer{background:linear-gradient(120deg,transparent 0 44%,rgba(255,255,255,.04) 44.4%,transparent 45.2%),#3E2C25;border-top-color:rgba(184,115,79,.32)}
+    footer p{color:rgba(247,240,230,.76)}
+    footer .footer-brand{color:var(--rose)}
+    footer .footer-services{color:rgba(247,240,230,.88)}
+    footer .footer-location{color:rgba(247,240,230,.82)}
+    footer .footer-contact{color:var(--ivory)}
+    footer .footer-contact:hover,footer .footer-contact:focus-visible{color:#EFC9A8}
+    footer .tagline{color:#EFC9A8}
+    footer .copyright{color:rgba(247,240,230,.58)}
+    h1,h2,h3,
+    .nav-mark,
+    .welcome,
+    .signature,
+    .why-callout,
+    .about-subtitle,
+    .about-verse,
+    .ask-line,
+    .quiet,
+    footer .footer-brand,
+    footer .tagline{
+      background:var(--champagne-glow);
+      filter:drop-shadow(0 1px 0 rgba(255,248,235,.9)) drop-shadow(0 2px 6px rgba(184,115,79,.28));
+    }
+    :focus-visible{outline-color:var(--rose)}
+    @media(max-width:1000px){
+      .nav-links{background:#F7F0E6;border-bottom-color:rgba(184,115,79,.5)}
+      .nav-links a{border-bottom-color:rgba(69,51,45,.12)}
+    }
+    @media(max-width:700px){
+      .nav-links{background:#F7F0E6;border-bottom-color:rgba(184,115,79,.5)}
+      .nav-links a{border-bottom-color:rgba(69,51,45,.12)}
+      .founders-values p+ p{border-top-color:rgba(184,115,79,.28)}
+    }
+
+    /* Owner login + photo/review manager */
+    .owner-login-btn{background:none;border:1px solid rgba(247,240,230,.5);color:rgba(247,240,230,.8);border-radius:999px;padding:8px 18px;font-size:.82rem;font-weight:700;letter-spacing:.06em;cursor:pointer;font-family:var(--sans)}
+    .owner-login-btn:hover{border-color:#EFC9A8;color:#EFC9A8}
+    .owner-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(62,44,37,.6);padding:20px}
+    .owner-modal.open{display:flex}
+    .owner-modal-card{background:#F7F0E6;color:#45332D;border-radius:8px;padding:32px 28px;max-width:380px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+    .owner-modal-card h3{font-size:1.6rem;margin-bottom:8px;color:#45332D}
+    .owner-modal-card p{font-size:.92rem;color:rgba(69,51,45,.75);margin:0 0 18px}
+    .owner-modal-card input{width:100%;padding:12px 14px;border:1px solid #D9C8BD;border-radius:4px;font:inherit;margin-bottom:12px;background:#FDF9F2;color:#45332D}
+    .owner-modal-card .btn{width:100%}
+    .owner-modal-card .owner-error{color:#A63A2E;font-size:.85rem;margin:0 0 12px;display:none}
+    .owner-modal-card .owner-close{background:none;border:0;color:rgba(69,51,45,.6);cursor:pointer;font-size:.85rem;margin-top:12px;width:100%;font-family:var(--sans)}
+    .owner-bar{display:none;align-items:center;justify-content:space-between;gap:12px;background:#E8D5C1;border:1px solid rgba(184,115,79,.5);border-radius:6px;padding:12px 16px;margin-bottom:18px}
+    body.owner-mode .owner-bar{display:flex}
+    .owner-bar p{margin:0;font-size:.9rem;color:#45332D}
+    .owner-bar .btn{padding:9px 14px;font-size:.82rem}
+    .photo-item{position:relative;min-height:310px;border:1px solid rgba(184,115,79,.42);overflow:hidden}
+    .photo-item img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+    .photo-item:first-child{min-height:430px}
+    .photo-add{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:310px;border:2px dashed rgba(184,115,79,.6);background:rgba(247,240,230,.6);color:#45332D;cursor:pointer;font:inherit;text-align:center;padding:28px}
+    .photo-add span{font-size:2rem;line-height:1;color:#B8734F}
+    .photo-add strong{font-family:var(--serif);font-weight:400;font-size:1.06rem}
+    .photo-add em{font-style:normal;font-size:.82rem;color:rgba(69,51,45,.6)}
+    .remove-btn{position:absolute;top:10px;right:10px;z-index:2;width:32px;height:32px;border-radius:50%;border:0;background:rgba(62,44,37,.85);color:#F7F0E6;font-size:1.1rem;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center}
+    body.owner-mode .remove-btn{display:flex}
+    .remove-btn:hover{background:#A63A2E}
+    .review-item{position:relative}
+    .review-form{display:none;background:#FDF9F2;border:1px solid rgba(184,115,79,.4);border-radius:6px;padding:24px;margin-top:18px}
+    .review-form.open{display:block}
+    .review-form input,.review-form textarea{width:100%;padding:12px 14px;border:1px solid #D9C8BD;border-radius:4px;font:inherit;margin-bottom:12px;background:#fff;color:#45332D}
+    .review-form textarea{min-height:90px;resize:vertical}
+    .owner-only{display:none!important}
+    body.owner-mode .owner-only{display:block!important}
+    body.owner-mode .owner-only-inline{display:inline-flex!important}
   </style>
 </head>
 <body>
@@ -366,7 +601,7 @@
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#why">Why Luxe</a>
-        <a href="#meet">Meet Peg</a>
+        <a href="#about">About</a>
         <a href="#special-rates">Special Rates</a>
         <a href="#photos-reviews">Photos &amp; Reviews</a>
       </div>
@@ -379,9 +614,8 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="welcome">Peg Wells • Macoupin County</p>
+          <p class="welcome">Peg Wells • Macoupin County &nbsp;•&nbsp; Terri Rabich • Montgomery County</p>
           <h1>Cleaning that feels like a fresh start.</h1>
-          <p>I’m a mom who knows how fast real life can fill up a home, a car, and your whole week. When you need a hand, I’ll show up ready to work and never make you feel judged.</p>
           <p>Call me for everyday cleaning, deep cleans, move-in or move-out help, laundry, organizing, auto care, and those jobs you’ve been meaning to get to.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#services">Explore our services</a>
@@ -393,6 +627,8 @@
         </div>
       </div>
     </section>
+
+
 
     <section class="services" id="services">
       <div class="container">
@@ -477,6 +713,7 @@
               <p><strong>Custom quote</strong>Need something we didn’t list—like a garage, light outdoor cleanup, errands, or everyday household help? Ask us. If it’s a good fit for Luxe, we’ll talk through the options with you.</p>
               <div class="quote-actions" aria-label="Call Luxe Signature and Company">
                 <a class="btn btn-primary" href="tel:+12176854520">Call Peg</a>
+                <a class="btn btn-secondary" href="tel:+12173133632">Call Terri</a>
               </div>
             </div>
           </article>
@@ -497,32 +734,58 @@
       </div>
     </section>
 
-    <section class="founders" id="meet">
-      <div class="container founders-shell">
-        <header class="founders-head">
+
+
+    <section class="about" id="about">
+      <div class="container about-shell">
+        <header class="about-head">
           <span class="rule"></span>
-          <h2>Meet Peg</h2>
-          <p class="founders-subtitle">The Heart Behind Luxe Signature &amp; Co.</p>
+          <h2>About Luxe Signature &amp; Co.</h2>
+          <p class="about-tagline">Refined Spaces. Exceptional Care. A Signature Touch.</p>
         </header>
-        <div class="founders-story">
-          <p class="founders-lead">Peg built Luxe around the kind of practical help she’s always been glad to give.</p>
-          <p class="founders-callout">Meet Peg — the woman behind the signature.</p>
-          <p>What began as a love of helping people became something much more meaningful: a vision for a company built around beauty, excellence, trust, and care.</p>
-          <p>For Peg, luxury has never been about excess. It is about the details others overlook. It is the feeling of walking into a beautifully cared-for home. The fresh scent in the air. The perfectly finished surface. The sense that, for a moment, everything is exactly where it belongs.</p>
-          <p>That is the experience she set out to create.</p>
-          <p>Family is at the heart of everything. Peg is a mother whose life revolves around her children and the beautiful, sometimes wonderfully chaotic reality of family life.</p>
-          <p>Those values naturally became part of LSC.</p>
-          <p>She believes your home should be more than clean — it should feel cared for. Your business should make the right impression. Your vehicle should feel refreshed. And when life becomes overwhelming, asking for help should never feel like something to be ashamed of.</p>
-          <p>So she created a company that brings together refined service and genuine heart.</p>
-          <div class="founders-values" aria-label="Luxe Signature and Company values">
-            <p>Every detail is intentional.</p>
-            <p>Every space is treated with respect.</p>
-            <p>Every client is treated like more than a customer.</p>
+        <div class="about-body">
+          <p>Luxe Signature &amp; Co. is being built from the ground up with heart, determination, and a vision to bring a higher standard of care to the spaces and people we serve.</p>
+          <p>We believe that luxury is more than appearance. It&rsquo;s the comfort of a beautifully maintained space, the freedom of having one less responsibility, and the peace of knowing the details have been thoughtfully taken care of.</p>
+          <p>Our services extend beyond traditional cleaning. From residential and commercial cleaning to detailed home organizing, property turnovers, move-in and move-out services, laundry assistance, and personalized lifestyle support, we bring thoughtful care and attention to every environment.</p>
+          <p>Whether we&rsquo;re refreshing a family home, preparing a rental property for its next tenant, maintaining a professional office, helping a busy household regain its organization, or lending an extra hand to an expecting or new mother, our purpose remains the same: to make everyday life a little easier and every space feel its best.</p>
+          <p>Sometimes that extra help looks a little different. It might mean helping prepare a meal for a senior, picking up groceries, running an errand, helping a busy sports mom keep up with life&rsquo;s demands, or providing an extra set of hands during an especially overwhelming season. Whatever the need, we believe thoughtful assistance can make an extraordinary difference.</p>
+          <p>We understand that life moves quickly. Families grow, businesses operate, properties change hands, and responsibilities can become overwhelming. Sometimes what makes the biggest difference isn&rsquo;t doing more yourself. It&rsquo;s having someone dependable you can trust to help.</p>
+          <p>At Luxe, we value the relationships behind every service. Our foundation is rooted in family, motherhood, caregiving, compassion, and a genuine love for community. We believe in showing kindness, supporting our neighbors, giving back when we can, and creating meaningful connections along the way.</p>
+          <p>Our commitment is to deliver a polished, professional experience with personal attention, respect, and an appreciation for the details that matter.</p>
+          <p>Because whether it&rsquo;s a home, an office, a rental property, or a fresh beginning, every space and every season of life deserves thoughtful care.</p>
+          <p class="about-close">Luxe Signature &amp; Co. — Elevating spaces. Simplifying life. Leaving a lasting impression.</p>
+
+          <h3>Our Commitment to Community</h3>
+          <p>We believe that compassion should never come with a price tag.</p>
+          <p>Giving back is an important part of the heart behind Luxe Signature &amp; Co. We believe everyone deserves a safe, comfortable, and cared-for environment, regardless of their financial circumstances.</p>
+          <p>Through community volunteering, donated professional cleaning services, and household supply assistance, our goal is to help individuals and families who need a little extra support but may not have the means to afford it.</p>
+          <p>We hope to build a community-supported giving program that helps provide professional-grade cleaning services, essential household products, and everyday supplies to qualifying individuals and families experiencing financial hardship.</p>
+          <p>Whether it&rsquo;s helping an overwhelmed mother, supporting a senior, assisting a family going through a difficult season, or providing basic cleaning essentials to someone who needs them, we believe even a small act of kindness can make a meaningful difference.</p>
+          <p>With the support of generous donors, community partners, and neighbors who believe in our mission, we hope to extend our reach and give more whenever we&rsquo;re able.</p>
+          <p>Because everyone deserves a little help sometimes. And no one should feel less deserving of a clean, comfortable space because money is tight.</p>
+          <p>At Luxe, giving back isn&rsquo;t just something we want to do. It&rsquo;s part of the difference we hope to make.</p>
+
+          <h3>The Luxe Standard</h3>
+          <p>Excellence is in the details.</p>
+          <p>Our standards are built on five principles:</p>
+          <div class="about-standards">
+            <div><strong>Exceptional Quality</strong><span>Every detail matters. We never settle for just getting the job done.</span></div>
+            <div><strong>Professionalism</strong><span>Respect, reliability, presentation, and accountability.</span></div>
+            <div><strong>Thoughtful Care</strong><span>Every client, property, and environment deserves consideration.</span></div>
+            <div><strong>Attention to Detail</strong><span>We look beyond the obvious and take pride in the finishing touches.</span></div>
+            <div><strong>Integrity &amp; Trust</strong><span>Honest service, clear expectations, and doing what we promise.</span></div>
           </div>
-          <p class="founders-close">Because at Luxe Signature &amp; Co., I don’t simply clean a space.</p>
-          <p class="founders-cadence">I clean it.<br>I care for it.<br>I leave my signature.</p>
-          <p class="founders-brand">Luxe Signature &amp; Co.</p>
-          <p class="founders-standard">Where exceptional care meets a signature standard.</p>
+          <h3>The Luxe Experience</h3>
+          <ul class="about-experience">
+            <li>A polished and professional presentation.</li>
+            <li>Consistent service standards.</li>
+            <li>Respect for personal spaces and business environments.</li>
+            <li>Thoughtful, personalized service.</li>
+            <li>Quality products and proper cleaning practices.</li>
+            <li>A welcoming, judgment-free experience.</li>
+            <li>A genuine commitment to community.</li>
+          </ul>
+          <p class="about-brand">&ldquo;At Luxe, excellence isn&rsquo;t an upgrade. It&rsquo;s our standard.&rdquo;</p>
         </div>
       </div>
     </section>
@@ -560,22 +823,35 @@
         </div>
 
         <p class="showcase-label">Photo gallery</p>
-        <div class="gallery-grid" aria-label="Photo gallery placeholders">
+        <div class="owner-bar" id="owner-bar">
+          <p>You&rsquo;re signed in as the owner. Tap <strong>+ Add Photo</strong> to add one, or the <strong>&times;</strong> on any photo to remove it.</p>
+          <button class="btn btn-primary" type="button" id="owner-logout">Log out</button>
+        </div>
+        <div class="gallery-grid" id="gallery-grid" aria-label="Photo gallery placeholders">
           <div class="photo-placeholder">
             <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="10" width="38" height="29" rx="2"></rect><path d="M14 10l3-5h14l3 5"></path><circle cx="24" cy="24" r="8"></circle></svg>
             <strong>Featured photo</strong>
             <span>Ready for a favorite Luxe transformation</span>
+            <button class="remove-btn" type="button" data-remove-photo aria-label="Remove this photo">&times;</button>
           </div>
           <div class="photo-placeholder">
             <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="10" width="38" height="29" rx="2"></rect><path d="M14 10l3-5h14l3 5"></path><circle cx="24" cy="24" r="8"></circle></svg>
             <strong>Gallery photo</strong>
             <span>Ready for real project photography</span>
+            <button class="remove-btn" type="button" data-remove-photo aria-label="Remove this photo">&times;</button>
           </div>
           <div class="photo-placeholder">
             <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="10" width="38" height="29" rx="2"></rect><path d="M14 10l3-5h14l3 5"></path><circle cx="24" cy="24" r="8"></circle></svg>
             <strong>Gallery photo</strong>
             <span>Ready for real project photography</span>
+            <button class="remove-btn" type="button" data-remove-photo aria-label="Remove this photo">&times;</button>
           </div>
+          <button class="photo-add owner-only" type="button" id="add-photo-btn">
+            <span>+</span>
+            <strong>Add Photo</strong>
+            <em>Pick a photo from your phone</em>
+          </button>
+          <input type="file" id="photo-input" accept="image/*" hidden>
         </div>
 
         <div class="reviews-block">
@@ -583,16 +859,26 @@
             <div><p class="showcase-label">Customer reviews</p><h3>Kind words, shared honestly.</h3></div>
             <p>Verified customer feedback can be added here as Luxe Signature &amp; Co. begins collecting reviews.</p>
           </div>
-          <div class="reviews-grid" aria-label="Customer review placeholders">
-            <div class="review-placeholder">
+          <div class="owner-only" style="margin-bottom:18px">
+            <button class="btn btn-primary" type="button" id="add-review-btn">+ Add Review</button>
+          </div>
+          <div class="review-form" id="review-form">
+            <input type="text" id="review-name" placeholder="Customer name (for example: Ladonna S.)" maxlength="60">
+            <textarea id="review-text" placeholder="What did they say about Luxe?" maxlength="500"></textarea>
+            <button class="btn btn-primary" type="button" id="save-review-btn">Save Review</button>
+          </div>
+          <div class="reviews-grid" id="reviews-grid" aria-label="Customer review placeholders">
+            <div class="review-placeholder review-item">
               <span class="quote-mark" aria-hidden="true">“</span>
               <strong>Customer review space</strong>
               <p>Reserved for a real review from a Luxe client.</p>
+              <button class="remove-btn" type="button" data-remove-review aria-label="Remove this review">&times;</button>
             </div>
-            <div class="review-placeholder">
+            <div class="review-placeholder review-item">
               <span class="quote-mark" aria-hidden="true">“</span>
               <strong>Customer review space</strong>
               <p>Reserved for a real review from a Luxe client.</p>
+              <button class="remove-btn" type="button" data-remove-review aria-label="Remove this review">&times;</button>
             </div>
           </div>
         </div>
@@ -612,6 +898,7 @@
       </div>
       <div class="footer-group">
         <a class="footer-contact" href="tel:+12176854520">📞 Peg: 217-685-4520</a>
+        <a class="footer-contact" href="tel:+12173133632">📞 Terri: 217-313-3632</a>
       </div>
       <div class="footer-group">
         <p class="tagline">Your Space. Your Peace. Our Signature Touch.</p>
@@ -619,8 +906,23 @@
       <div class="footer-group">
         <p class="copyright">© 2026 Luxe Signature &amp; Co. All Rights Reserved.</p>
       </div>
+      <div class="footer-group">
+        <button class="owner-login-btn" type="button" id="owner-login-btn">Owner Login</button>
+      </div>
     </div>
   </footer>
+
+  <div class="owner-modal" id="owner-modal" role="dialog" aria-modal="true" aria-labelledby="owner-modal-title">
+    <div class="owner-modal-card">
+      <h3 id="owner-modal-title">Owner Login</h3>
+      <p>Sign in to add or remove photos and reviews on this page.</p>
+      <p class="owner-error" id="owner-error">That email or password didn&rsquo;t match. Try again.</p>
+      <input type="email" id="owner-email" placeholder="Email" autocomplete="username">
+      <input type="password" id="owner-password" placeholder="Password" autocomplete="current-password">
+      <button class="btn btn-primary" type="button" id="owner-submit">Log In</button>
+      <button class="owner-close" type="button" id="owner-cancel">Cancel</button>
+    </div>
+  </div>
   <script>
     const button = document.querySelector('.menu-button');
     const links = document.querySelector('.nav-links');
@@ -634,6 +936,167 @@
       button.setAttribute('aria-expanded', 'false');
       button.textContent = 'Menu';
     }));
+
+    /* ---- Owner login + photo/review manager ---- */
+    const OWNERS = {
+      'peg.wells@luxesignatureandco.com': { hash: 'ec927db42dca5ea2a672c9bf394cbdfb1dfc4428212ad058831c69e0d3044550', name: 'Peg' },
+      'terri.rabich@luxesignatureandco.com': { hash: 'aac5e0336fbe162ec63edc4c424e4d977ecbbfd0ff692bfadc676f23f7a877fd', name: 'Terri' }
+    };
+    async function sha256Hex(text){
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    const PHOTO_KEY = 'luxePhotos';
+    const REVIEW_KEY = 'luxeReviews';
+    const galleryGrid = document.getElementById('gallery-grid');
+    const reviewsGrid = document.getElementById('reviews-grid');
+    const addPhotoBtn = document.getElementById('add-photo-btn');
+    const photoInput = document.getElementById('photo-input');
+    const addReviewBtn = document.getElementById('add-review-btn');
+    const reviewForm = document.getElementById('review-form');
+    const reviewName = document.getElementById('review-name');
+    const reviewText = document.getElementById('review-text');
+    const saveReviewBtn = document.getElementById('save-review-btn');
+    const loginBtn = document.getElementById('owner-login-btn');
+    const modal = document.getElementById('owner-modal');
+    const emailInput = document.getElementById('owner-email');
+    const passwordInput = document.getElementById('owner-password');
+    const submitBtn = document.getElementById('owner-submit');
+    const cancelBtn = document.getElementById('owner-cancel');
+    const errorMsg = document.getElementById('owner-error');
+    const logoutBtn = document.getElementById('owner-logout');
+
+    function loadJSON(key){ try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : null; } catch(e){ return null; } }
+    function saveJSON(key, val){ try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){} }
+
+    function photoTile(src){
+      const d = document.createElement('div');
+      d.className = 'photo-item';
+      const img = document.createElement('img');
+      img.src = src; img.alt = 'Luxe project photo';
+      const x = document.createElement('button');
+      x.className = 'remove-btn'; x.type = 'button'; x.textContent = '\u00d7';
+      x.setAttribute('aria-label', 'Remove this photo');
+      x.addEventListener('click', () => { d.remove(); savePhotos(); });
+      d.appendChild(img); d.appendChild(x);
+      return d;
+    }
+    function renderPhotos(){
+      const saved = loadJSON(PHOTO_KEY);
+      if (saved === null) return;
+      galleryGrid.querySelectorAll('.photo-placeholder, .photo-item').forEach(el => el.remove());
+      saved.forEach(src => galleryGrid.insertBefore(photoTile(src), addPhotoBtn));
+    }
+    function savePhotos(){
+      const srcs = Array.from(galleryGrid.querySelectorAll('.photo-item img')).map(i => i.src);
+      saveJSON(PHOTO_KEY, srcs);
+    }
+    function reviewTile(name, text){
+      const d = document.createElement('div');
+      d.className = 'review-placeholder review-item';
+      const q = document.createElement('span');
+      q.className = 'quote-mark'; q.setAttribute('aria-hidden','true'); q.textContent = '\u201c';
+      const s = document.createElement('strong'); s.textContent = name;
+      const p = document.createElement('p'); p.textContent = text;
+      const x = document.createElement('button');
+      x.className = 'remove-btn'; x.type = 'button'; x.textContent = '\u00d7';
+      x.setAttribute('aria-label', 'Remove this review');
+      x.addEventListener('click', () => { d.remove(); saveReviews(); });
+      d.appendChild(q); d.appendChild(s); d.appendChild(p); d.appendChild(x);
+      return d;
+    }
+    function renderReviews(){
+      const saved = loadJSON(REVIEW_KEY);
+      if (saved === null) return;
+      reviewsGrid.querySelectorAll('.review-item').forEach(el => el.remove());
+      saved.forEach(r => reviewsGrid.appendChild(reviewTile(r.name, r.text)));
+    }
+    function saveReviews(){
+      const items = Array.from(reviewsGrid.querySelectorAll('.review-item')).map(el => ({
+        name: el.querySelector('strong') ? el.querySelector('strong').textContent : '',
+        text: el.querySelector('p') ? el.querySelector('p').textContent : ''
+      }));
+      saveJSON(REVIEW_KEY, items);
+    }
+    function setOwnerMode(on, name){
+      document.body.classList.toggle('owner-mode', on);
+      if (on) { sessionStorage.setItem('luxeOwner', name || 'Owner'); loginBtn.textContent = 'Signed in: ' + (name || 'Owner'); }
+      else { sessionStorage.removeItem('luxeOwner'); loginBtn.textContent = 'Owner Login'; }
+    }
+    function openModal(){ modal.classList.add('open'); errorMsg.style.display = 'none'; passwordInput.value = ''; setTimeout(() => emailInput.focus(), 50); }
+    function closeModal(){ modal.classList.remove('open'); }
+    async function tryLogin(){
+      const email = (emailInput.value || '').trim().toLowerCase();
+      const owner = OWNERS[email];
+      let hash = '';
+      try { hash = await sha256Hex(passwordInput.value); } catch(e){ hash = ''; }
+      if (owner && hash && hash === owner.hash){ closeModal(); setOwnerMode(true, owner.name); }
+      else { errorMsg.style.display = 'block'; passwordInput.select(); }
+    }
+    loginBtn.addEventListener('click', () => {
+      if (document.body.classList.contains('owner-mode')) { setOwnerMode(false); }
+      else openModal();
+    });
+    submitBtn.addEventListener('click', tryLogin);
+    emailInput.addEventListener('keydown', e => { if (e.key === 'Enter') passwordInput.focus(); });
+    passwordInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
+    cancelBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    if (logoutBtn) logoutBtn.addEventListener('click', () => setOwnerMode(false));
+
+    galleryGrid.addEventListener('click', e => {
+      const btn = e.target.closest('[data-remove-photo]');
+      if (btn) { btn.closest('.photo-placeholder').remove(); }
+    });
+    reviewsGrid.addEventListener('click', e => {
+      const btn = e.target.closest('[data-remove-review]');
+      if (btn) { btn.closest('.review-item').remove(); }
+    });
+    addPhotoBtn.addEventListener('click', () => photoInput.click());
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files && photoInput.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        const img = new Image();
+        img.onload = () => {
+          const max = 1200;
+          let w = img.width, h = img.height;
+          if (w > max || h > max){ const s = Math.min(max / w, max / h); w = Math.round(w * s); h = Math.round(h * s); }
+          const c = document.createElement('canvas');
+          c.width = w; c.height = h;
+          c.getContext('2d').drawImage(img, 0, 0, w, h);
+          const dataUrl = c.toDataURL('image/jpeg', 0.82);
+          galleryGrid.querySelectorAll('.photo-placeholder').forEach(el => el.remove());
+          galleryGrid.insertBefore(photoTile(dataUrl), addPhotoBtn);
+          savePhotos();
+        };
+        img.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+      photoInput.value = '';
+    });
+    addReviewBtn.addEventListener('click', () => {
+      reviewForm.classList.toggle('open');
+      if (reviewForm.classList.contains('open')) reviewName.focus();
+    });
+    saveReviewBtn.addEventListener('click', () => {
+      const name = reviewName.value.trim();
+      const text = reviewText.value.trim();
+      if (!name || !text){ reviewName.focus(); return; }
+      reviewsGrid.querySelectorAll('.review-item').forEach(el => el.remove());
+      const saved = loadJSON(REVIEW_KEY) || [];
+      saved.push({name, text});
+      saveJSON(REVIEW_KEY, saved);
+      renderReviews();
+      reviewName.value = ''; reviewText.value = '';
+      reviewForm.classList.remove('open');
+    });
+
+    renderPhotos();
+    renderReviews();
+    const savedOwner = sessionStorage.getItem('luxeOwner');
+    if (savedOwner) setOwnerMode(true, savedOwner);
   </script>
 </body>
 </html>
