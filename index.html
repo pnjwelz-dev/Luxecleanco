@@ -376,6 +376,14 @@
     :root{
       --rose-metal:linear-gradient(105deg,#7a4526 0%,#c98a5b 12%,#e8c87a 24%,#f9e6b8 36%,#b8734f 48%,#e8b4a0 60%,#a65a50 72%,#e8c87a 84%,#8a5a3b 100%);
       --champagne-glow:linear-gradient(105deg,#c9a86a 0%,#e8c87a 18%,#f9e6b8 38%,#c98a5b 55%,#efc9a8 72%,#b8734f 88%,#e8c87a 100%);
+      --rose-glitter:
+        radial-gradient(circle at 15% 30%,rgba(255,255,255,.95) 0 1px,transparent 2px),
+        radial-gradient(circle at 45% 70%,rgba(255,250,240,.9) 0 1px,transparent 2px),
+        radial-gradient(circle at 70% 25%,rgba(255,255,255,.9) 0 1.5px,transparent 2.5px),
+        radial-gradient(circle at 85% 60%,rgba(255,250,240,.85) 0 1px,transparent 2px),
+        radial-gradient(circle at 30% 50%,rgba(255,255,255,.85) 0 1px,transparent 2px),
+        radial-gradient(circle at 60% 85%,rgba(255,250,240,.8) 0 1px,transparent 2px),
+        linear-gradient(105deg,#c98a5b 0%,#e8b4a0 25%,#f2c9b8 50%,#d9a05b 75%,#c98a5b 100%);
     }
     /* Metallic headings must stay text, never solid blocks: the drop-shadow
        filter breaks background-clip on phones, so it is removed here, and the
@@ -505,6 +513,28 @@
       radial-gradient(circle at 62% 12%,rgba(255,255,255,.9) 0 1.5px,transparent 2.5px);
       animation:glitter-twinkle 3s ease-in-out infinite}
     .footer-content{position:relative;z-index:1}
+
+    /* Luxe signing: rose gold glitter inside, copper outline */
+    .nav-mark{
+      background:var(--rose-glitter);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      color:transparent;
+      -webkit-text-stroke:1px #8a5a3b;
+      filter:none;
+      animation:none;
+    }
+    footer .footer-brand{
+      background:var(--rose-glitter);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      color:transparent;
+      -webkit-text-stroke:1.5px #8a5a3b;
+      filter:none;
+      animation:none;
+    }
 
     /* Header box in rose gold */
     .site-nav{background:linear-gradient(115deg,#c98a5b 0%,#e8b4a0 22%,#d9a05b 48%,#e8c87a 72%,#b8734f 100%);color:#2E1F1A;border-bottom-color:rgba(69,51,45,.4);box-shadow:0 10px 32px rgba(0,0,0,.3)}
