@@ -8,7 +8,7 @@
   <title>Luxe Signature & Co.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --emerald:#161417;
@@ -772,6 +772,79 @@
 
     /* Notice bar letters in pearl rose dust. */
     .notice-bar{color:#F9EBE5}
+
+    /* ===== Peg's direction Nov 17 — clean, elegant, luxurious, simple ===== */
+    /* Headings: Dancing Script, larger, metallic rose gold. */
+    h1,h2,h3{font-family:'Dancing Script',var(--script)}
+    .section-heading h2,.about-head h2,.special-top h2,.showcase-heading h2,.reviews-head h3,.contact h2,.why h2{font-size:clamp(4rem,7.5vw,6.5rem)}
+    .service h3{font-size:2.4rem}
+    .about-body h3{font-size:2.4rem}
+
+    /* More copper lettering beside the Luxe — the welcome line in rich copper. */
+    .welcome{
+      background:linear-gradient(105deg,#7a4526 0%,#b8734f 30%,#d9a05b 50%,#8a5a3b 75%,#7a4526 100%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;color:transparent;
+      -webkit-text-stroke:.5px #6e4536;
+    }
+
+    /* Text boxes: soft champagne, brass copper shining fonts. */
+    .menu-card,.service,.moms-card,.community-card,.review-placeholder,.about-story .story-turn{
+      background:#F7EDE3;
+      color:#6e4536;
+      border-color:rgba(184,115,79,.55);
+    }
+    .menu-card h3,.service h3,.moms-card h3,.community-card h3{
+      background:linear-gradient(105deg,#7a4526 0%,#b8734f 30%,#d9a05b 50%,#8a5a3b 75%,#7a4526 100%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;color:transparent;
+      -webkit-text-stroke:0;
+    }
+    .menu-kicker,.price-head span,.home-size{
+      background:linear-gradient(105deg,#7a4526 0%,#b8734f 40%,#8a5a3b 100%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-stroke:0;
+    }
+    .price-row:not(.price-head) span:not(.home-size){color:#6e4536}
+    .price-row:not(.price-head) span:not(.home-size)::before{
+      background:linear-gradient(105deg,#7a4526 0%,#b8734f 40%,#8a5a3b 100%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-stroke:0;
+    }
+    .menu-card p,.service p{color:#6e4536}
+    .menu-card .menu-copy,.menu-card .menu-list li,.service .menu-copy{color:#6e4536}
+    .menu-card .menu-price{color:#6e4536!important}
+    .menu-card .cleaning-note{color:rgba(110,69,54,.75)!important}
+    .moms-card p,.community-card p{color:rgba(110,69,54,.92)}
+    .review-placeholder p{color:rgba(110,69,54,.78)}
+    .review-placeholder strong{color:#6e4536}
+    .review-placeholder .quote-mark{color:#b8734f}
+    .about-story .story-turn p{color:#6e4536}
+
+    /* Picture boxes: dark smoky swirl greys. */
+    .photo-placeholder,.photo-item{
+      background:
+        radial-gradient(120% 90% at 18% 8%,rgba(255,255,255,.07),transparent 55%),
+        radial-gradient(90% 70% at 85% 90%,rgba(0,0,0,.22),transparent 55%),
+        linear-gradient(135deg,#3d3d41 0%,#333338 45%,#45454a 70%,#2e2e33 100%);
+      border-color:rgba(201,140,122,.5);
+    }
+
+    /* Rose gold shimmer band between sections. */
+    .rose-band{
+      margin:6px 16px;
+      height:12px;
+      border-radius:6px;
+      background:
+        radial-gradient(circle at 15% 50%,rgba(255,255,255,.8) 0 1px,transparent 2px),
+        radial-gradient(circle at 40% 50%,rgba(255,240,200,.8) 0 1px,transparent 2px),
+        radial-gradient(circle at 65% 50%,rgba(255,255,255,.8) 0 1px,transparent 2px),
+        radial-gradient(circle at 85% 50%,rgba(255,240,200,.8) 0 1px,transparent 2px),
+        linear-gradient(105deg,#b76e79 0%,#e8b4a0 25%,#f7d9ce 50%,#d99a88 75%,#b76e79 100%);
+      background-size:100% 100%,100% 100%,100% 100%,100% 100%,200% 100%;
+      animation:gold-shimmer 4s ease-in-out infinite;
+      box-shadow:0 2px 8px rgba(0,0,0,.25);
+    }
   </style>
 </head>
 <body>
@@ -810,6 +883,7 @@
         </div>
       </div>
     </section>
+  <div class="rose-band" aria-hidden="true"></div>
 
 
 
@@ -904,6 +978,7 @@
         <p class="pricing-fineprint">All prices are starting points. Final pricing depends on the size and current condition of the space, travel, and the work requested. Serving Macoupin County and surrounding areas.</p>
       </div>
     </section>
+  <div class="rose-band" aria-hidden="true"></div>
 
     <section class="why" id="why">
       <div class="container why-grid">
@@ -916,6 +991,7 @@
         </div>
       </div>
     </section>
+  <div class="rose-band" aria-hidden="true"></div>
 
 
 
@@ -972,6 +1048,7 @@
         </div>
       </div>
     </section>
+  <div class="rose-band" aria-hidden="true"></div>
 
     <section class="special" id="special-rates">
       <div class="container">
@@ -996,6 +1073,7 @@
         </div>
       </div>
     </section>
+  <div class="rose-band" aria-hidden="true"></div>
 
     <section class="showcase" id="photos-reviews">
       <div class="container">
@@ -1067,6 +1145,7 @@
         </div>
       </div>
     </section>
+  <div class="rose-band" aria-hidden="true"></div>
 
   </main>
 
