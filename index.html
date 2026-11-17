@@ -409,6 +409,33 @@
     .about-experience li:last-child{border-bottom:0}
     .about-experience li:before{content:"";position:absolute;left:4px;top:1.15em;width:8px;height:8px;border:1px solid var(--rose);transform:rotate(45deg)}
 
+    /* Blurred fairy lights + fine glitter in the header, on the black marble */
+    .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
+      radial-gradient(circle at 8% 18%,rgba(232,200,122,.5) 0,rgba(232,200,122,0) 90px),
+      radial-gradient(circle at 22% 72%,rgba(185,130,128,.42) 0,rgba(185,130,128,0) 80px),
+      radial-gradient(circle at 85% 22%,rgba(232,200,122,.42) 0,rgba(232,200,122,0) 100px),
+      radial-gradient(circle at 92% 68%,rgba(201,140,122,.38) 0,rgba(201,140,122,0) 70px),
+      radial-gradient(circle at 55% 8%,rgba(249,230,184,.45) 0,rgba(249,230,184,0) 85px),
+      radial-gradient(circle at 40% 88%,rgba(232,200,122,.32) 0,rgba(232,200,122,0) 95px),
+      radial-gradient(circle at 68% 78%,rgba(185,130,128,.32) 0,rgba(185,130,128,0) 75px),
+      radial-gradient(circle at 35% 40%,rgba(249,230,184,.28) 0,rgba(249,230,184,0) 60px),
+      linear-gradient(90deg,rgba(0,0,0,.02),rgba(0,0,0,.18));
+      filter:blur(3px)}
+    .hero-sparkle{position:absolute;inset:0;z-index:0;pointer-events:none;background:
+      radial-gradient(circle at 12% 22%,rgba(249,230,184,.95) 0 1.5px,transparent 2.5px),
+      radial-gradient(circle at 28% 68%,rgba(232,200,122,.85) 0 1px,transparent 2px),
+      radial-gradient(circle at 45% 12%,rgba(255,255,255,.9) 0 1px,transparent 2px),
+      radial-gradient(circle at 62% 82%,rgba(239,201,168,.9) 0 1.5px,transparent 2.5px),
+      radial-gradient(circle at 78% 30%,rgba(249,230,184,.85) 0 1px,transparent 2px),
+      radial-gradient(circle at 90% 55%,rgba(255,255,255,.8) 0 1px,transparent 2px),
+      radial-gradient(circle at 18% 88%,rgba(232,200,122,.8) 0 1px,transparent 2px),
+      radial-gradient(circle at 52% 48%,rgba(249,230,184,.8) 0 1px,transparent 2px),
+      radial-gradient(circle at 70% 8%,rgba(255,255,255,.85) 0 1.5px,transparent 2.5px),
+      radial-gradient(circle at 33% 38%,rgba(239,201,168,.75) 0 1px,transparent 2px);
+      animation:glitter-twinkle 3.5s ease-in-out infinite}
+    @keyframes glitter-twinkle{0%,100%{opacity:.55}50%{opacity:1}}
+    .hero-grid{position:relative;z-index:1}
+
     /* Owner login + photo/review manager */
     .owner-login-btn{background:none;border:1px solid rgba(247,240,230,.5);color:rgba(247,240,230,.8);border-radius:999px;padding:8px 18px;font-size:.82rem;font-weight:700;letter-spacing:.06em;cursor:pointer;font-family:var(--sans)}
     .owner-login-btn:hover{border-color:#EFC9A8;color:#EFC9A8}
@@ -465,6 +492,7 @@
 
   <main>
     <section class="hero" id="home">
+      <div class="hero-sparkle" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="welcome">Peg Wells • Macoupin County &nbsp;•&nbsp; Terri Rabich • Montgomery County</p>
