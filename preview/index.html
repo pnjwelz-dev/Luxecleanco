@@ -858,12 +858,14 @@
       box-shadow:0 2px 8px rgba(0,0,0,.25);
     }
 
-    /* Peg's Luxe palette — background: soft cashmere, warm champagne glow. */
+    /* Peg's Luxe palette — background: soft cashmere, warm champagne glow. More gold glow, like the flyer. */
     body{
       background:
         radial-gradient(120% 60% at 20% 0%,rgba(255,255,255,.75),transparent 55%),
-        radial-gradient(90% 50% at 85% 20%,rgba(232,200,122,.20),transparent 60%),
-        radial-gradient(100% 60% at 10% 80%,rgba(232,200,122,.14),transparent 60%),
+        radial-gradient(90% 50% at 85% 20%,rgba(232,200,122,.38),transparent 60%),
+        radial-gradient(100% 60% at 10% 80%,rgba(232,200,122,.28),transparent 60%),
+        radial-gradient(60% 40% at 50% 0%,rgba(232,200,122,.32),transparent 60%),
+        radial-gradient(50% 35% at 50% 100%,rgba(232,200,122,.20),transparent 60%),
         linear-gradient(135deg,#F7F2EA 0%,#F5EEE3 40%,#EFE6D8 70%,#F7F2EA 100%);
     }
     /* Peg's Canva — pages: cashmere cream on top of white mono. */
@@ -980,6 +982,31 @@
     /* Tiny bit of sage — Peg's accent, just a touch. */
     .menu-kicker{color:#7A9A7E!important}
     .quote-strip{border-left:3px solid #9CAF88}
+    /* Peg Nov 17 — fix: every light paragraph/list on the light pages goes deep warm taupe so it reads. */
+    .hero-copy>p:not(.welcome),
+    .menu-card p,
+    .cleaning-note,
+    .menu-list li,
+    .quote-strip p,
+    .pricing-fineprint,
+    .why-copy p,
+    .founders-story,
+    .about-body,
+    .about-standards span,
+    .showcase-heading p,
+    .reviews-head p,
+    .review-placeholder p,
+    footer p,
+    .section-heading p{
+      color:#4A3B32!important;
+      -webkit-text-fill-color:#4A3B32!important;
+    }
+    /* Script accents go muted rose gold so they read on light. */
+    .signature,.why-callout,.founders-subtitle,.about-tagline,.founders-story .founders-callout,.founders-story .founders-standard,.about-close,.quiet,.menu-price strong{
+      color:#a65a50!important;
+      -webkit-text-fill-color:#a65a50!important;
+      background:none!important;
+    }
   </style>
 </head>
 <body>
