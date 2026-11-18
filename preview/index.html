@@ -8,7 +8,7 @@
   <title>Luxe Signature & Co.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --emerald:#161417;
@@ -28,9 +28,9 @@
         linear-gradient(132deg,transparent 0 34%,rgba(249,235,232,.04) 34.3%,transparent 35.1%),
         linear-gradient(42deg,transparent 0 74%,rgba(201,140,122,.04) 74.4%,transparent 75.2%),
         #121013;
-      --serif:"Libre Baskerville", Georgia, serif;
-      --script:"Great Vibes", "Brush Script MT", cursive;
-      --sans:"Manrope", system-ui, sans-serif;
+      --serif:"Dancing Script", "Great Vibes", cursive;
+      --script:"Dancing Script", "Great Vibes", cursive;
+      --sans:"Open Sans", system-ui, sans-serif;
       --rose-metal:linear-gradient(105deg,#8f544a 0%,#c77f6d 14%,#f6c9b9 31%,#a65a50 48%,#f2b9a7 64%,#7e403b 80%,#d79683 100%);
       --grey-marble:
         linear-gradient(125deg,transparent 0 25%,rgba(255,255,255,.07) 25.4%,rgba(88,86,90,.04) 26.4%,transparent 27.2% 64%,rgba(201,140,122,.07) 64.3%,transparent 65.1%),
@@ -961,17 +961,24 @@
       color:#2E1F1A;
     }
     .menu-price{color:#2E1F1A!important}
-    /* Peg: white letters go black so they read. Solid black, no gradient, no stroke. */
-    h1,h2,h3,.welcome,.founders-story .founders-cadence,.founders-story .founders-brand,.about-brand,.site-nav .nav-mark,.price-head span,.home-size,.about-body h3,.service h3,.section-heading h2,.about-head h2,.special-top h2,.showcase-heading h2,.reviews-head h3,.contact h2,.why h2{
+    /* Peg: headings in Dancing Script, solid deep rose gold so they read. No gradient, no stroke. */
+    h1,h2,h3,.welcome,.founders-story .founders-cadence,.founders-story .founders-brand,.about-brand,.site-nav .nav-mark,.about-body h3,.service h3,.section-heading h2,.about-head h2,.special-top h2,.showcase-heading h2,.reviews-head h3,.contact h2,.why h2{
       background:none!important;
       -webkit-background-clip:border-box!important;
       background-clip:border-box!important;
-      -webkit-text-fill-color:#000!important;
-      color:#000!important;
+      -webkit-text-fill-color:#a65a50!important;
+      color:#a65a50!important;
       -webkit-text-stroke:0!important;
       text-shadow:none!important;
       filter:none!important;
       animation:none!important;
+    }
+    /* Price labels stay dark so they read. */
+    .price-head span,.home-size{
+      background:none!important;
+      -webkit-text-fill-color:#2E1F1A!important;
+      color:#2E1F1A!important;
+      -webkit-text-stroke:0!important;
     }
   </style>
 </head>
