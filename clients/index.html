@@ -7,33 +7,34 @@
 <title>Luxe Signature &amp; Co. — Tips &amp; Booking</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ivory:#F7F2EA;--rose:#C98C7A;--blush:#E6CFCB;--champagne:#D9B98A;--champagne-soft:#E8D5B0;--rose-metal:linear-gradient(105deg,#8f544a 0%,#c77f6d 14%,#f6c9b9 31%,#a65a50 48%,#f2b9a7 64%,#7e403b 80%,#d79683 100%)}
+  :root{--ivory:#F7F2EA;--rose:#B08D57;--blush:#E3C9A8;--champagne:#D9B98A;--champagne-soft:#E8D5B0;--rose-metal:linear-gradient(105deg,#8a6a3b 0%,#b08d57 14%,#e8d5b0 31%,#a67c52 48%,#d9b98a 64%,#7e5f33 80%,#c9a45c 100%)}
   *{box-sizing:border-box}
   body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,rgba(217,185,138,.14),transparent 60%),radial-gradient(900px 500px at 50% 110%,rgba(201,140,122,.10),transparent 60%),#0a090b;color:var(--ivory);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.6}
   a{color:inherit}
   .wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}
   header{text-align:center;padding:34px 20px 10px}
-  .wordmark{font-family:"Great Vibes",cursive;font-size:52px;line-height:1.1;margin:0;background:var(--rose-metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .tagline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:#efc1b5;font-size:1.2rem;margin:8px 0 0}
+  .wordmark{font-family:"Pinyon Script",cursive;font-size:52px;line-height:1.1;margin:0;background:var(--rose-metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .tagline{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:#E3C9A8;font-size:1.2rem;margin:8px 0 0}
   .nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 8px}
   .nav a{display:inline-block;padding:11px 20px;border:1px solid rgba(201,140,122,.55);border-radius:999px;text-decoration:none;font-weight:700;font-size:.92rem;color:var(--ivory)}
   .nav a.primary{background:var(--rose);color:#241a17;border-color:transparent}
-  h2{font-family:"Great Vibes",cursive;font-weight:400;font-size:2.6rem;line-height:1.15;margin:44px 0 6px;background:var(--rose-metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  h2{font-family:"Pinyon Script",cursive;font-weight:400;font-size:2.6rem;line-height:1.15;margin:44px 0 6px;background:var(--rose-metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .lede{color:rgba(247,242,234,.78);margin:0 0 8px}
   .tip-card{margin:22px 0;padding:26px 22px;border:1px solid rgba(201,140,122,.42);border-radius:14px;background:rgba(255,255,255,.03)}
-  .tip-kicker{margin:0 0 8px;font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#d9a394}
+  .tip-kicker{margin:0 0 8px;font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#B08D57}
   .tip-intro{margin:0 0 14px;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.12rem;line-height:1.6;color:rgba(247,242,234,.88)}
   .tip-steps{margin:0;padding-left:22px}
   .tip-steps li{margin:0 0 8px;color:rgba(247,242,234,.82)}
   .luxe-tip{margin:16px 0 0;padding:14px 16px;border-top:1px solid rgba(201,140,122,.4);border-bottom:1px solid rgba(201,140,122,.28);background:rgba(0,0,0,.28);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.05rem;color:rgba(247,242,234,.88)}
-  .luxe-tip strong{color:#efc1b5}
+  .luxe-tip strong{color:#E3C9A8}
   .formula{margin:16px 0 0;padding:14px 16px;border:1px solid rgba(201,140,122,.55);border-radius:12px;background:rgba(201,140,122,.1);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.08rem;color:var(--ivory)}
-  .formula strong{color:#efc1b5}
+  .formula strong{color:#E3C9A8}
   .tip-note{margin:12px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.05rem;color:rgba(247,242,234,.85)}
   .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-  .team-story{max-width:640px;margin:14px auto 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.12rem;line-height:1.6;color:rgba(247,242,234,.92);text-align:center}
+  .team-story{max-width:640px;margin:14px auto 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;line-height:1.65;color:rgba(247,242,234,.92);text-align:left}
+  .team-subtitle{max-width:640px;margin:8px auto 0;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--champagne);text-align:center}
   .price-list{list-style:none;margin:18px auto 0;padding:0;max-width:560px;text-align:left}
   .price-list li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 4px;border-bottom:1px solid rgba(217,185,138,.28)}
   .price-list li span{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.18rem;color:var(--ivory)}
@@ -44,17 +45,17 @@
   .team-card{padding:28px 22px;border:1px solid rgba(217,185,138,.55);border-radius:16px;background:linear-gradient(160deg,rgba(217,185,138,.12),rgba(201,140,122,.07));text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.35)}
   .team-card strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--ivory);letter-spacing:.02em}
   .team-card span{display:block;color:var(--champagne);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:6px 0 12px}
-  .team-card a{color:#f0d9c2;font-weight:700;text-decoration:none;font-size:1.08rem}
+  .team-card a{color:#E8D5B0;font-weight:700;text-decoration:none;font-size:1.08rem}
   form{margin-top:18px}
   label{display:block;font-weight:700;font-size:.9rem;margin:16px 0 6px}
   input,select,textarea{width:100%;padding:13px 14px;border:1px solid rgba(201,140,122,.5);border-radius:10px;background:#141114;color:var(--ivory);font:inherit;font-size:16px}
   textarea{min-height:96px;resize:vertical}
   .btn{display:block;width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:var(--rose);color:#241a17;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
   .alt-contact{text-align:center;margin-top:18px;color:rgba(247,242,234,.75)}
-  .alt-contact a{color:#efc1b5;font-weight:700}
+  .alt-contact a{color:#E3C9A8;font-weight:700}
   .sent-note{display:none;margin-top:18px;padding:16px;border:1px solid rgba(201,140,122,.55);border-radius:12px;background:rgba(201,140,122,.12);text-align:center}
   footer{text-align:center;padding:36px 20px 0;color:rgba(247,242,234,.6);font-size:.88rem}
-  footer .verse{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.05rem;color:#efc1b5;margin-bottom:10px}
+  footer .verse{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.05rem;color:#E3C9A8;margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -207,18 +208,32 @@
     </section>
 
     <section id="team">
-      <h2>Meet your Luxe team</h2>
-      <p class="lede">Real people, right here in Macoupin County. Call or text either of us.</p>
-      <p class="team-story">Peg and Terri are two uniquely talented and qualified individuals. They started out as best friends, and Terri married Cody, Peg's little brother. They both have huge hearts and give what they can. Peg is a mom to Zyler, Elizabeth, Ellie, and Zane, and she loves her kids always. Terri is a wife and a devoted mother to Joseph, a beautiful child with autism. She also helped raise her sister Liz.</p>
+      <h2>The Hearts Behind Luxe</h2>
+      <p class="team-subtitle">Two women. One friendship. A whole lot of heart.</p>
+      <p class="team-story">Behind every great business is a story, and ours began with friendship, family, and a shared belief that kindness can make a difference.</p>
+      <p class="team-story">Meet Peg, Founder, and Terri, Co-Owner of Luxe Signature &amp; Co. Two uniquely talented women with different strengths, individual experiences, and one thing in common: genuinely big hearts and a passion for giving back whenever and wherever they can.</p>
+      <p class="team-story">What started as a friendship grew into family when Terri married Peg's little brother, Cody. Through the years, life brought growing families, unexpected turns, challenges, and plenty of ups and downs. Like many things in life, our journey didn't unfold exactly as originally planned.</p>
+      <p class="team-story">Luxe began as a dream shared by Peg and her best friend Deb. When circumstances changed and Deb needed to step away, a new chapter began. Terri stepped in as Co-Owner, bringing her own strengths, heart, and dedication to help carry that original vision forward.</p>
+      <p class="team-story">Different chapters, evolving dreams, but one thing has remained the same: the desire to build something meaningful.</p>
+      <p class="team-story">Peg, our Founder, is first and foremost a mother to Zyler, Elizabeth, Ellie, and Zane. Her children are her greatest motivation, her biggest inspiration, and a constant reminder of why creating something of her own matters. Peg believes in fresh starts, second chances, treating people with compassion, and making others feel comfortable without judgment. She has a heart for people and believes that sometimes the smallest acts of kindness can make the biggest difference.</p>
+      <p class="team-story">Terri, our Co-Owner, is a devoted wife and proud mother to Joseph, a beautiful boy with autism who brings his own special light into the world. She has also played an important role in helping raise her sister, Liz. Family, patience, love, and understanding are woven into who Terri is. Her caring nature and dedication to the people she loves are qualities she brings into everything she does.</p>
+      <p class="team-story">Together, we're building more than a cleaning and home-services business. We're building something with purpose.</p>
+      <p class="team-story">We understand that life gets busy. Sometimes homes need a little extra love, families need a helping hand, and people need someone who shows up without making them feel embarrassed about where they're starting.</p>
+      <p class="team-story">That's the heart of Luxe.</p>
+      <p class="team-story">We don't believe a clean home is just about appearances. It's about comfort, peace of mind, a fresh start, and having one less thing weighing on your shoulders.</p>
+      <p class="team-story">Our dream is to create a business where quality meets compassion, where every customer feels valued, and where giving back will always be part of who we are.</p>
+      <p class="team-story">We're Peg and Terri. We're family, friends, mothers, dreamers, and business owners. We've grown through different chapters, learned through life's unexpected turns, and we're bringing our own strengths together to build something we're proud of.</p>
+      <p class="team-story">And we're just getting started.</p>
+      <p class="team-story">Welcome to Luxe Signature &amp; Co.</p>
       <div class="team-grid">
         <div class="team-card">
           <strong>Peg Wells</strong>
-          <span>Founder &amp; Co-Partner</span>
+          <span>Founder</span>
           <a href="tel:+12176854520">217-685-4520</a>
         </div>
         <div class="team-card">
           <strong>Terri Rabich</strong>
-          <span>Co-Partner</span>
+          <span>Co-Owner</span>
           <a href="tel:+12173133632">217-313-3632</a>
         </div>
       </div>
@@ -313,7 +328,7 @@ document.getElementById('bookForm').addEventListener('submit', function (e) {
     v('f-notes') || '(none)'
   ];
   var subject = 'Appointment request — ' + v('f-name');
-  var href = 'mailto:luxesignatureandco@gmail.com'
+  var href = 'mailto:Peg.Wells@luxesignatureandco.com'
     + '?subject=' + encodeURIComponent(subject)
     + '&body=' + encodeURIComponent(lines.join('\n'));
   window.location.href = href;
