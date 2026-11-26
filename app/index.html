@@ -302,6 +302,39 @@ footer{padding:18px;text-align:center;font-size:14px;color:#8a7a70}
 </div>
 </section>
 
+<!-- EMAILS -->
+<section class="tab" id="tab-emails">
+<h2>Emails</h2>
+<div class="card">
+<h3>Luxe emails &mdash; what was said &amp; sent</h3>
+<p class="small">Copies of every Luxe email from Nov 26, 2026 on. Peg.Wells@ and Terri.Rabich@ only &mdash; no personal Gmail. Terri sees the same folder in her office.</p>
+<div id="emailList"></div>
+</div>
+<div class="card">
+<h3>Add an email to the folder</h3>
+<label>To</label>
+<input id="emTo" placeholder="Brand or person">
+<label>From</label>
+<select id="emFrom">
+<option>Peg.Wells@luxesignatureandco.com</option>
+<option>Terri.Rabich@luxesignatureandco.com</option>
+</select>
+<label>Subject</label>
+<input id="emSubject" placeholder="Subject">
+<label>Status</label>
+<select id="emStatus">
+<option value="draft">Draft &mdash; ready to send</option>
+<option value="sent">Sent</option>
+<option value="replied">Replied</option>
+</select>
+<label>Email</label>
+<textarea id="emBody" placeholder="Paste the full email here"></textarea>
+<label>Reply received (if any)</label>
+<textarea id="emReply" placeholder="Paste their reply here"></textarea>
+<button class="btn" onclick="addEmail()">Add email to folder</button>
+</div>
+</section>
+
 </main>
 <footer>
 Peg Wells (217) 685-4520<br>
@@ -316,6 +349,7 @@ Peg.Wells@luxesignatureandco.com &bull; luxesignatureandco.com
 <button onclick="showTab('forms',this)"><span class="ico">&#128196;</span>Forms</button>
 <button onclick="showTab('invoice',this)"><span class="ico">&#36;</span>Invoice</button>
 <button onclick="showTab('supplies',this)"><span class="ico">&#129532;</span>Supplies</button>
+<button onclick="showTab('emails',this)"><span class="ico">&#9993;</span>Emails</button>
 </nav>
 
 <script>
@@ -349,13 +383,15 @@ clients:[{id:"c1", name:"Angelina Capmajo", phone:"+1 (319) 290-0912", address:"
 todos:[{id:"t1", text:"Text Angelina to confirm the Nov 30 job details", done:false}],
 invoices:[],
 intake:{},
-checks:{}
+checks:{},
+emails:EMAILS.slice()
 };
 }
 var state;
 try { state = JSON.parse(localStorage.getItem(KEY)) || seed(); }
 catch(e){ state = seed(); }
 if(!state.appointments) state = seed();
+if(!state.emails) { state.emails = EMAILS.slice(); save(); }
 function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
 function money(n){ return "$" + (Math.round(n*100)/100).toFixed(2); }
 function fmtDate(d){
@@ -585,6 +621,40 @@ a.click();
 setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
 }
 
+var EMAILS = [
+{id:"e1", date:"2026-11-26", to:"Pine-Sol / Lysol / Mr. Clean / Zep — one per brand", from:"Peg.Wells@luxesignatureandco.com", subject:"Head-to-head challenge — will [Brand] stand up?", status:"draft", body:"Hi, I'm Peg Wells, founder and owner of Luxe Signature & Co. My new co-owner Terri and I are running a head-to-head cleaning challenge on real jobs — Pine-Sol vs Lysol vs Mr. Clean vs Zep — testing them side by side with before-and-after video, and sharing honest results with our community on Facebook and Instagram.\n\nWe've already had several brands send us products to test on real jobs, and when we find our top products we'd love to talk about collaborating with the winners.\n\nWe'd love to put your product in the challenge. Send us what you'd like tested, and we'll give it a fair shot against the rest — and share the honest result, win or lose.\n\nThank you for considering it.\n\nWarmly,\nPeg Wells | Terri Rabich\nFounder & Owner | Co-Owner\nPeg: 217-685-4520 | Terri: 217-313-3632\nPeg.Wells@luxesignatureandco.com | Terri.Rabich@luxesignatureandco.com\nluxesignatureandco.com\nFacebook: https://www.facebook.com/share/1Eon65VYgc/\nInstagram: @welzypeg", reply:""}
+];
+function renderEmails(){
+var html = "";
+if(!state.emails || !state.emails.length) html = "<p class='small'>No emails in the folder yet.</p>";
+(state.emails||[]).slice().reverse().forEach(function(e){
+var pill = e.status==="sent" ? "<span class='pill green'>Sent</span>" : (e.status==="replied" ? "<span class='pill green'>Replied</span>" : "<span class='pill'>Draft</span>");
+html += "<div class='item'><div class='body'>"
++ "<div class='title'>" + esc(e.subject) + " " + pill + "</div>"
++ "<div class='meta'><b>" + esc(e.date) + "</b> &bull; To: " + esc(e.to) + "</div>"
++ "<div class='meta'>From: " + esc(e.from) + "</div>"
++ "<div class='meta' style='white-space:pre-wrap;margin-top:6px'>" + esc(e.body) + "</div>"
++ (e.reply ? "<div class='meta' style='margin-top:8px'><b>Reply:</b><div style='white-space:pre-wrap'>" + esc(e.reply) + "</div></div>" : "")
++ "</div><div><button class='btn btn-small btn-ghost' onclick=\"delEmail('" + e.id + "')\">Delete</button></div></div>";
+});
+document.getElementById("emailList").innerHTML = html;
+}
+function addEmail(){
+var to = document.getElementById("emTo").value.trim();
+var subject = document.getElementById("emSubject").value.trim();
+var body = document.getElementById("emBody").value.trim();
+if(!to || !subject || !body){ alert("Add who it is to, a subject, and the email itself."); return; }
+if(!state.emails) state.emails = [];
+state.emails.push({id:uid(), date:new Date().toISOString().slice(0,10), to:to,
+from:document.getElementById("emFrom").value,
+subject:subject, status:document.getElementById("emStatus").value,
+body:body, reply:document.getElementById("emReply").value.trim()});
+save();
+["emTo","emSubject","emBody","emReply"].forEach(function(i){ document.getElementById(i).value=""; });
+renderEmails();
+}
+function delEmail(id){ if(!confirm("Delete this email from the folder?")) return; state.emails = (state.emails||[]).filter(function(x){ return x.id!==id; }); save(); renderEmails(); }
+
 function renderSuppliers(){
 var q = (document.getElementById("supSearch").value||"").toLowerCase();
 var f = window._supFilter || "all";
@@ -623,6 +693,7 @@ loadIntake();
 renderInvoices();
 renderSuppliers();
 renderGuide();
+renderEmails();
 previewInvoice();
 </script>
 </body>
